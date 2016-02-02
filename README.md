@@ -1,7 +1,5 @@
 # DataStax Essentails Day
 
-Welcome to the 'In One Day' 2 hour training materials 
-
 # About this session
 This session is designed to get your feet wet in the technical goodness of DataStax Enterprise. If you're interested in more in depth hands on, email marc.selwan@datastax.com or your existing DataStax account manager.
 
