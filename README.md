@@ -12,8 +12,9 @@ This session is designed to get your feet wet in the technical goodness of DataS
 2. SSH into any of the 12 nodes 
   ```ssh datastax@10.0.0.6 (7,8,9...17)```
 3. Have fun! Here are the OpsCenter and Spark UI's 
-  * Spark: http://msfttrainingday.westus.cloudapp.azure.com:7081/
-  * OpsCenter: http://msfttrainingday.westus.cloudapp.azure.com:8888/opscenter/index.html 
+  * Spark: UI LINK
+  * Solr: UI LINK
+  * OpsCenter: UI LINK 
 
 #####For at home use, you need:
 * Python 2.7+
