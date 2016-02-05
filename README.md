@@ -65,7 +65,7 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```/var/log/cassandra/system.log```
 
 
-####Querying the database 
+#### <i class="icon-refresh"></i> Querying the database 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
@@ -87,9 +87,9 @@ CREATE TABLE <yourkeyspace>.sales (
 	price double,
 	PRIMARY KEY (name, time)
 ) WITH CLUSTERING ORDER BY ( time DESC );
-
 ```
->Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
+
+> Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
 
 Let's get some data into your table! Do this a few times with different values. 
 
@@ -219,10 +219,43 @@ Want to see a really cool example of a live DSE Search app? Check out [KillrVide
 DSE Analytics (Spark)
 --------------------
 
+Spark is general cluster compute engine. You can think of it in two pieces: **Streaming** and **Batch**. **Streaming** is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). **Batch** includes both data crunching code and **SparkSQL**, a hive compliant SQL abstraction for **Batch** jobs. 
+
+It's a little tricky to have an entire class run streaming operations on a single cluster, so if you're interested in dissecting a full scale streaming app, check out [THIS git](https://github.com/retroryan/SparkAtScale).  
+
+>Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL:
+
+```dse spark-sql //input port change flag```
+
+Try some CQL commands
+
+```use <your keyspace>;```
+```SELECT * FROM <your table> WHERE...;```
+
+And something not too familiar in CQL...
+```SELECT sum(price) FROM <your table>...;```
+
+Let's try having some fun on that Amazon data:
+
+```
+SELECT sum(price) FROM metadata;
+```
+```
+SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
+```
+```
+SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
+```
+
+>Have fun with it! See what you come up with :)
 
 
+### Tables
 
-#####For at home use, you need:
-* Python 2.7+
-* [DataStax Python Driver](https://github.com/datastax/python-driver) 
-* [DataStax Enterprise 4.8.3 or greater](https://www.datastax.com/downloads) 
+**Markdown Extra** has a special syntax for tables:
+
+Item     | Value
+-------- | ---
+Computer | $1600
+Phone    | $12
+Pipe     | $1
