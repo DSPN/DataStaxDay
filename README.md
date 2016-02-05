@@ -62,14 +62,17 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
 **The main log you'll be taking a look at:**
-```/var/log/cassandra/system.log```
+```
+/var/log/cassandra/system.log
+```
 
-
-#### <i class="icon-refresh"></i> Querying the database 
+####Querying the database 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
-```cqlsh 127.0.0.1``` 
+```
+cqlsh 127.0.0.1
+``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
 Let's make our first Cassandra Keyspace! 
