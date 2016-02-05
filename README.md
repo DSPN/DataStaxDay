@@ -100,7 +100,8 @@ Let's get some data into your table! Do this a few times with different values.
 
 And to retrieve it:
 
-```SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
+```
+SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
 
