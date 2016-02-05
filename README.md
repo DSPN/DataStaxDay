@@ -65,7 +65,7 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```/var/log/cassandra/system.log```
 
 
-#### <i class="icon-refresh"></i> Querying the database 
+####Querying the database 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
@@ -89,7 +89,7 @@ CREATE TABLE <yourkeyspace>.sales (
 ) WITH CLUSTERING ORDER BY ( time DESC );
 
 ```
-> Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
+>Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
 
 Let's get some data into your table! Do this a few times with different values. 
 
