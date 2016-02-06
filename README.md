@@ -62,7 +62,9 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
 **The main log you'll be taking a look at:**
-```/var/log/cassandra/system.log```
+```
+/var/log/cassandra/system.log
+```
 
 
 #### Querying the database 
@@ -73,9 +75,12 @@ In addition to DevCenter, you can also use **CQLSH** as an interactive command l
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
 Let's make our first Cassandra Keyspace! 
+
 >Hint: You can use DevCenter if you'd like to use something that's easy on the eyes. 
 
-```CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };```
+```
+CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
+```
 
 And just like that, any data within any table you create under your keyspace will automatically be replicated 3 times. Let's keep going and create ourselves a table. You can follow my example or be a rebel and roll your own. 
 
@@ -117,7 +122,9 @@ Consistency in Cassandra refers to the number of acknowledgements replica nodes 
 
 >Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a **SELECT** statement to see the effects.
 
-```SELECT * FROM <yourkeyspace>.sales where name='<enter name>';```
+```
+SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+```
 
 How did we do? 
 
