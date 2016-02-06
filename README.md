@@ -93,7 +93,9 @@ CREATE TABLE <yourkeyspace>.sales (
 
 Let's get some data into your table! Do this a few times with different values. 
 
-```INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);```
+```
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
+```
 
 And to retrieve it:
 
