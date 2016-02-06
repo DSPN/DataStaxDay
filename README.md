@@ -136,13 +136,21 @@ Let's try the **SELECT** statement again. Any changes in latency?
 >Keep in mind that our dataset is so small, it's sitting in memory on all nodes. With larger datasets that spill to disk, the latency cost become much more drastic. 
 
 **Let's try this again** but this time, let's pay attention to what's happening in the trace
-```consistency local_all```
-```SELECT * FROM <yourkeyspace>.sales where name='<enter name>';```
+```
+consistency local_all
+```
+```
+SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+```
 
 Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
 
-```consistency local_quorum```
-```SELECT * FROM <yourkeyspace>.sales where name='<enter name>';```
+```
+consistency local_quorum
+```
+```
+SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+```
 
 >This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
@@ -157,7 +165,9 @@ DSE Search is awesome. You can configure which columns of which Cassandra tables
 
 Let's start off by indexing the tables we've already made. Here's where the dsetool really comes in handy:
 
-```dsetool create_core <yourkeyspace>.sales generateResources=true reindex=true```
+```
+dsetool create_core <yourkeyspace>.sales generateResources=true reindex=true
+```
 
 >If you've ever created your own Solr cluster, you know you need to create the core and upload a schema and config.xml. That **generateResources** tag does that for you. For production use, you'll want to take the resources and edit them to your needs but it does save you a few steps. 
 
