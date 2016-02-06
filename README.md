@@ -62,17 +62,14 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
 **The main log you'll be taking a look at:**
-```
-/var/log/cassandra/system.log
-```
+```/var/log/cassandra/system.log```
 
-####Querying the database 
+
+#### Querying the database 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
-```
-cqlsh 127.0.0.1
-``` 
+```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
 Let's make our first Cassandra Keyspace! 
@@ -129,7 +126,16 @@ How did we do?
 Let's try the **SELECT** statement again. Any changes in latency? 
 >Keep in mind that our dataset is so small, it's sitting in memory on all nodes. With larger datasets that spill to disk, the latency cost become much more drastic. 
 
-Keep trying different combinations of **consistency level** and types of select statements. Remove the partition key from your query and look at what happens in the trace. It's interesting to see what's happening in the trace but keep in mind that these are extremely important concepts you, as the developer, need to grasp. 
+**Let's try this again** but this time, let's pay attention to what's happening in the trace
+```consistency local_all```
+```SELECT * FROM <yourkeyspace>.sales where name='<enter name>';```
+
+Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
+
+```consistency local_quorum```
+```SELECT * FROM <yourkeyspace>.sales where name='<enter name>';```
+
+>This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
 For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy](www.academy.datastax.com) website. 
 
@@ -252,14 +258,3 @@ SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_pr
 ```
 
 >Have fun with it! See what you come up with :)
-
-
-### Tables
-
-**Markdown Extra** has a special syntax for tables:
-
-Item     | Value
--------- | ---
-Computer | $1600
-Phone    | $12
-Pipe     | $1
