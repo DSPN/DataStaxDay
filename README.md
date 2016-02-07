@@ -67,7 +67,7 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
 
-#### Querying the database 
+#### Creating a Keyspace, Table, and Queries 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
@@ -96,10 +96,14 @@ CREATE TABLE <yourkeyspace>.sales (
 
 > Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
 
-Let's get some data into your table! Do this a few times with different values. 
+Let's get some data into your table! Cut and paste these inserts into DevCenter or CQLSH. Feel free to insert your own data values, as well. 
 
 ```
 INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150204, 'Apple iPad', 999.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150206, 'Ernie Ball Music Man Stingray Bass', 1499.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150207, 'Jimi Hendrix Stratocaster', 899.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150208, 'Santa Cruz Tallboy 29er', 4599.00);
 ```
 
 And to retrieve it:
@@ -108,6 +112,12 @@ And to retrieve it:
 SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
+
+#### Cassandra data modeling secret sauce: Primary Key
+
+There are a few key concepts to understand when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand Primary Keys work in Cassandra. Let's dive in!
+
+Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries they enable.
 
 #### Let's play with consistency!
 
