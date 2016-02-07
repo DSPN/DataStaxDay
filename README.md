@@ -115,15 +115,19 @@ SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 
 #### Cassandra data model secret sauce: Primary Key
 
-There are a few key concepts to understand when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
+There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
 Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries enabled by different primary keys.
 
 #### Let's play with consistency!
 
-Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful while also providing good data (avoiding dirty reads). By default, we recommend a replication factor of 3 and consistency level of QUORUM for all operations. You will almost always get the performance you need with those default settings.
+Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful while also providing good data (avoiding dirty reads). 
 
-In some cases, developers find Cassandra's replication fast enough to warrant lower consistency for even better latency SLA's. For cases where very strong consistency is required, possibly across data centers in real time, a developer can trade a little bit of latency for a higher consistency level. Let's give it a shot. 
+By default, we recommend a replication factor of 3 and consistency level of LOCAL_QUORUM for all operations. You will almost always get the performance you need with these default settings.
+
+In some cases, developers find Cassandra's replication fast enough to warrant lower consistency for even better latency SLA's. For cases where very strong global consistency is required, possibly across data centers in real time, a developer can trade latency for a higher consistency level. 
+
+Let's give it a shot. 
 
 >During this exercise, I'll be taking down nodes so you can see the CAP theorem in action. We'll be using CQLSH for this one. 
 
