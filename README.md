@@ -235,6 +235,8 @@ CREATE TABLE amazon.metadata (
 );
 ```
 
+> Example page of what's in the DB http://www.amazon.com/Science-Closer-Look-Grade-6/dp/0022841393/ref=sr_1_1?ie=UTF8&qid=1454964627&sr=8-1&keywords=0022841393
+
 So what are things you can do? 
 >Filter queries: These are awesome because the result set gets cached in memory. 
 ```
