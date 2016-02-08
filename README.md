@@ -29,9 +29,10 @@ password: C@ssandra
 ```
 
 #### UI's you'll want to play around with
-> - OpsCenter: www.linktoopscenter.com
-> - Spark: www.linktospark.com
-> - Solr: www.linktosolr.co
+ 
+>OpsCenter: http://52.36.13.12:8888
+>Spark Master: http://52.36.13.12:7080
+>Solr UI: http://52.36.13.12:8983/solr
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
