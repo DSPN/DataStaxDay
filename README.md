@@ -272,9 +272,9 @@ It's a little tricky to have an entire class run streaming operations on a singl
 
 >Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL:
 
-```dse spark-sql --conf spark.ui.port=<Pick a random 4 digit number> --conf spark.cores.max=2```
+```dse spark-sql --conf spark.ui.port=<Pick a random 4 digit number> --conf spark.cores.max=1```
 
->Notice the spark.ui.port flag - Because we are on a shared cluster, we need to specify a radom port so we don't clash with other users. We're also setting max cores = 2 or else one person will hog all the resources. 
+>Notice the spark.ui.port flag - Because we are on a shared cluster, we need to specify a radom port so we don't clash with other users. We're also setting max cores = 1 or else one job will hog all the resources. 
 
 Try some CQL commands
 
