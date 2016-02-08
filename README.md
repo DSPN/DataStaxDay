@@ -67,7 +67,7 @@ dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
 
-#### Querying the database 
+#### Creating a Keyspace, Table, and Queries 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
@@ -96,10 +96,14 @@ CREATE TABLE <yourkeyspace>.sales (
 
 > Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
 
-Let's get some data into your table! Do this a few times with different values. 
+Let's get some data into your table! Cut and paste these inserts into DevCenter or CQLSH. Feel free to insert your own data values, as well. 
 
 ```
 INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150204, 'Apple iPad', 999.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150206, 'Music Man Stingray Bass', 1499.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150207, 'Jimi Hendrix Stratocaster', 899.00);
+INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150208, 'Santa Cruz Tallboy 29er', 4599.00);
 ```
 
 And to retrieve it:
@@ -109,9 +113,21 @@ SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
 
+#### Cassandra data model secret sauce: Primary Key
+
+There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
+
+Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries enabled by different primary keys.
+
 #### Let's play with consistency!
 
-Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful. This is something that developers need to spend time planning. In most cases, developers find Cassandra's replication fast enough to warrant lower consistency for better SLA's. For cases where stronger consistency is required, a developer can trade latency for a higher consistency level. Let's give it a shot. 
+Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful while also providing good data (avoiding dirty reads). 
+
+By default, we recommend a replication factor of 3 and consistency level of LOCAL_QUORUM for all operations. You will almost always get the performance you need with these default settings.
+
+In some cases, developers find Cassandra's replication fast enough to warrant lower consistency for even better latency SLA's. For cases where very strong global consistency is required, possibly across data centers in real time, a developer can trade latency for a higher consistency level. 
+
+Let's give it a shot. 
 
 >During this exercise, I'll be taking down nodes so you can see the CAP theorem in action. We'll be using CQLSH for this one. 
 
