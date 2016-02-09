@@ -33,6 +33,7 @@ password: C@ssandra
  - OpsCenter: http://52.36.13.12:8888
  - Spark Master: http://52.36.13.12:7080
  - Solr UI: http://52.36.13.12:8983/solr
+ - Spark Notebook http://52.36.23.184:9290/
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
@@ -305,5 +306,8 @@ SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
 ```
 SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
 ```
+
+**Spark Notebook**
+(Spark Notebook)[http://spark-notebook.io/] is an awesome tool for exploring Spark and making simple visualizations. We have an instance up and running so you can check it out here: http://52.36.23.184:9290/
 
 >Have fun with it! See what you come up with :)
