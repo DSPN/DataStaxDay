@@ -7,7 +7,7 @@ In this session, you'll learn all about DataStax Enterprise. It's a mix between 
 ----------
 
 
-Logistics
+Hands On Setup
 -------------
 
 We have an 8 node cluster for you to play with! The cluster is currently running in both **search** and **analytics** mode so you can take advantage of both Spark and Solr on your Cassandra data. 
@@ -47,7 +47,7 @@ password: C@ssandra
 ----------
 
 
-DSE Cassandra 
+Hands On DSE Cassandra 
 -------------------
 
 Cassandra is the brains of DSE. It's an awesome storage engine that handles replication, availability, structuring, and of course, storing the data at lightning speeds. It's important to get yourself acquainted with the Cassandra to fully utilize the power of the DSE Stack. 
@@ -72,7 +72,7 @@ dsetool status //shows current status of cluster, including DSE features
 dsetool create_core //will create a Solr schema on Cassandra data for Search
 ```
 
-**The main log you'll be taking a look at:**
+**The main log you'll be taking a look at for troubleshooting outside of OpsCenter:**
 ```
 /var/log/cassandra/system.log
 ```
@@ -124,11 +124,23 @@ SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
 
+----------
+
+
+Hands On Cassandra Primary Keys 
+-------------------
+
 #### Cassandra data model secret sauce: Primary Key
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
 Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries enabled by different primary keys.
+
+----------
+
+
+Hands On Cassandra Consistency 
+-------------------
 
 #### Let's play with consistency!
 
@@ -186,7 +198,7 @@ For more detailed classed on data modeling, consistency, and Cassandra 101, chec
 ----------
 
 
-DSE Search
+Hands On DSE Search
 -------------
 DSE Search is awesome. You can configure which columns of which Cassandra tables you'd like indexed in **lucene** format to make extended searches more efficient while enabling features such as text search and geospatial search. 
 
@@ -274,7 +286,7 @@ Want to see a really cool example of a live DSE Search app? Check out [KillrVide
 ----------
 
 
-DSE Analytics (Spark)
+Hands On DSE Analytics (Spark)
 --------------------
 
 Spark is general cluster compute engine. You can think of it in two pieces: **Streaming** and **Batch**. **Streaming** is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). **Batch** includes both data crunching code and **SparkSQL**, a hive compliant SQL abstraction for **Batch** jobs. 
@@ -306,7 +318,11 @@ SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
 ```
 SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
 ```
+----------
 
+
+DSE Streaming Demo
+--------------------
 **Spark Notebook**
 
 [Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. We have an instance up and running so you can check it out here: http://52.36.23.184:9290/
