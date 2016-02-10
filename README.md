@@ -102,7 +102,7 @@ SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 Hands On Cassandra Primary Keys 
 -------------------
 
-#### Cassandra data model secret sauce: Primary Key
+#### The secret sauce of the Cassandra data model: Primary Key
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
@@ -118,7 +118,7 @@ Hands On Cassandra Consistency
 
 Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful while also providing good data (avoiding dirty reads). 
 
-By default, we recommend a replication factor of 3 and consistency level of LOCAL_QUORUM for all operations. You will almost always get the performance you need with these default settings.
+We recommend a ** default replication factor of 3 and consistency level of LOCAL_QUORUM as a starting point**. You will almost always get the performance you need with these default settings.
 
 In some cases, developers find Cassandra's replication fast enough to warrant lower consistency for even better latency SLA's. For cases where very strong global consistency is required, possibly across data centers in real time, a developer can trade latency for a higher consistency level. 
 
