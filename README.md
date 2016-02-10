@@ -52,32 +52,6 @@ Hands On DSE Cassandra
 
 Cassandra is the brains of DSE. It's an awesome storage engine that handles replication, availability, structuring, and of course, storing the data at lightning speeds. It's important to get yourself acquainted with the Cassandra to fully utilize the power of the DSE Stack. 
 
-**Commands you'll want to know:**
-```
-nodetool  //Cassandra's main utility tool
-```
-**Examples:**
-```
-nodetool status  //shows current status of the cluster 
-nodetool tpstats //shows thread pool status - critical for ops
-```
-
-```
-dsetool //main utility tool for DSE
-```
-**Examples:**
-```
-dsetool status //shows current status of cluster, including DSE features
-
-dsetool create_core //will create a Solr schema on Cassandra data for Search
-```
-
-**The main log you'll be taking a look at for troubleshooting outside of OpsCenter:**
-```
-/var/log/cassandra/system.log
-```
-
-
 #### Creating a Keyspace, Table, and Queries 
 
 In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
@@ -286,7 +260,7 @@ Want to see a really cool example of a live DSE Search app? Check out [KillrVide
 ----------
 
 
-Hands On DSE Analytics (Spark)
+Hands On DSE Analytics
 --------------------
 
 Spark is general cluster compute engine. You can think of it in two pieces: **Streaming** and **Batch**. **Streaming** is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). **Batch** includes both data crunching code and **SparkSQL**, a hive compliant SQL abstraction for **Batch** jobs. 
@@ -328,3 +302,37 @@ DSE Streaming Demo
 [Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. We have an instance up and running so you can check it out here: http://52.36.23.184:9290/
 
 >Have fun with it! See what you come up with :)
+----------
+
+
+Hands On DSE Analytics
+--------------------
+
+Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then here are some core utilities you'll need to understand: nodetool and dsetool.
+
+**Utilities you'll want to know:**
+```
+nodetool  //Cassandra's main utility tool
+dsetool   //DSE's main utility tool
+```
+**Examples:**
+```
+nodetool status  //shows current status of the cluster 
+nodetool tpstats //shows thread pool status - critical for ops
+```
+
+```
+dsetool //main utility tool for DSE
+```
+**Examples:**
+```
+dsetool status //shows current status of cluster, including DSE features
+
+dsetool create_core //will create a Solr schema on Cassandra data for Search
+```
+
+**The main log you'll be taking a look at for troubleshooting outside of OpsCenter:**
+```
+/var/log/cassandra/system.log
+```
+
