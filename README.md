@@ -54,7 +54,7 @@ Cassandra is the brains of DSE. It's an awesome storage engine that handles repl
 
 #### Creating a Keyspace, Table, and Queries 
 
-In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
+Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
 
 ```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
