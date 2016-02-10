@@ -54,7 +54,7 @@ Cassandra is the brains of DSE. It's an awesome storage engine that handles repl
 
 #### Creating a Keyspace, Table, and Queries 
 
-Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. Start CQLSH like this:
+Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line tool for CQL access to Cassandra. Start CQLSH like this:
 
 ```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
@@ -304,7 +304,7 @@ DSE Streaming Demo
 ----------
 
 
-Getting Started and Ops
+Getting Started With DSE Ops
 --------------------
 
 Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then two core utilities you'll need to understand are nodetool and dsetool.
@@ -317,6 +317,7 @@ dsetool   //DSE's main utility tool
 **nodetool Examples:**
 ```
 nodetool status  //shows current status of the cluster 
+
 nodetool tpstats //shows thread pool status - critical for ops
 ```
 
