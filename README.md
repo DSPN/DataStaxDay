@@ -54,14 +54,12 @@ Cassandra is the brains of DSE. It's an awesome storage engine that handles repl
 
 #### Creating a Keyspace, Table, and Queries 
 
-Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
+Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. Start CQLSH like this:
 
 ```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
 Let's make our first Cassandra Keyspace! 
-
->Hint: You can use DevCenter if you'd like to use something that's easy on the eyes. 
 
 ```
 CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
@@ -299,13 +297,13 @@ DSE Streaming Demo
 --------------------
 **Spark Notebook**
 
-[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. We have an instance up and running so you can check it out here: http://52.36.23.184:9290/
+[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. It's not a DataStax product. But we have an instance up and running so you can check out our streaming demo here: (http://52.36.23.184:9290/)
 
 >Have fun with it! See what you come up with :)
 ----------
 
 
-Hands On DSE Analytics
+Getting Started and Ops
 --------------------
 
 Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then here are some core utilities you'll need to understand: nodetool and dsetool.
