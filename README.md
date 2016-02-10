@@ -7,7 +7,7 @@ In this session, you'll learn all about DataStax Enterprise. It's a mix between 
 ----------
 
 
-Logistics
+Hands On Setup
 -------------
 
 We have an 8 node cluster for you to play with! The cluster is currently running in both **search** and **analytics** mode so you can take advantage of both Spark and Solr on your Cassandra data. 
@@ -47,47 +47,19 @@ password: C@ssandra
 ----------
 
 
-DSE Cassandra 
+Hands On DSE Cassandra 
 -------------------
 
 Cassandra is the brains of DSE. It's an awesome storage engine that handles replication, availability, structuring, and of course, storing the data at lightning speeds. It's important to get yourself acquainted with the Cassandra to fully utilize the power of the DSE Stack. 
 
-**Commands you'll want to know:**
-```
-nodetool  //Cassandra's main utility tool
-```
-**Examples:**
-```
-nodetool status  //shows current status of the cluster 
-nodetool tpstats //shows thread pool status - critical for ops
-```
-
-```
-dsetool //main utility tool for DSE
-```
-**Examples:**
-```
-dsetool status //shows current status of cluster, including DSE features
-
-dsetool create_core //will create a Solr schema on Cassandra data for Search
-```
-
-**The main log you'll be taking a look at:**
-```
-/var/log/cassandra/system.log
-```
-
-
 #### Creating a Keyspace, Table, and Queries 
 
-In addition to DevCenter, you can also use **CQLSH** as an interactive command line too for query data in Cassandra. 
+Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line tool for CQL access to Cassandra. Start CQLSH like this:
 
 ```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
 Let's make our first Cassandra Keyspace! 
-
->Hint: You can use DevCenter if you'd like to use something that's easy on the eyes. 
 
 ```
 CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
@@ -124,17 +96,29 @@ SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
 
-#### Cassandra data model secret sauce: Primary Key
+----------
+
+
+Hands On Cassandra Primary Keys 
+-------------------
+
+#### The secret sauce of the Cassandra data model: Primary Key
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
-Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries enabled by different primary keys.
+Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
+
+----------
+
+
+Hands On Cassandra Consistency 
+-------------------
 
 #### Let's play with consistency!
 
 Consistency in Cassandra refers to the number of acknowledgements replica nodes need to send to the coordinator for an operation to be successful while also providing good data (avoiding dirty reads). 
 
-By default, we recommend a replication factor of 3 and consistency level of LOCAL_QUORUM for all operations. You will almost always get the performance you need with these default settings.
+We recommend a ** default replication factor of 3 and consistency level of LOCAL_QUORUM as a starting point**. You will almost always get the performance you need with these default settings.
 
 In some cases, developers find Cassandra's replication fast enough to warrant lower consistency for even better latency SLA's. For cases where very strong global consistency is required, possibly across data centers in real time, a developer can trade latency for a higher consistency level. 
 
@@ -186,7 +170,7 @@ For more detailed classed on data modeling, consistency, and Cassandra 101, chec
 ----------
 
 
-DSE Search
+Hands On DSE Search
 -------------
 DSE Search is awesome. You can configure which columns of which Cassandra tables you'd like indexed in **lucene** format to make extended searches more efficient while enabling features such as text search and geospatial search. 
 
@@ -274,7 +258,7 @@ Want to see a really cool example of a live DSE Search app? Check out [KillrVide
 ----------
 
 
-DSE Analytics (Spark)
+Hands On DSE Analytics
 --------------------
 
 Spark is general cluster compute engine. You can think of it in two pieces: **Streaming** and **Batch**. **Streaming** is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). **Batch** includes both data crunching code and **SparkSQL**, a hive compliant SQL abstraction for **Batch** jobs. 
@@ -306,9 +290,46 @@ SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
 ```
 SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
 ```
+----------
 
+
+DSE Streaming Demo
+--------------------
 **Spark Notebook**
 
-[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. We have an instance up and running so you can check it out here: http://52.36.23.184:9290/
+[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. It's not a DataStax product. But we have an instance up and running so you can check out our streaming demo here: http://52.36.23.184:9290/
 
 >Have fun with it! See what you come up with :)
+
+----------
+
+
+Getting Started With DSE Ops
+--------------------
+
+Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then two core utilities you'll need to understand are nodetool and dsetool.
+
+**Utilities you'll want to know:**
+```
+nodetool  //Cassandra's main utility tool
+dsetool   //DSE's main utility tool
+```
+**nodetool Examples:**
+```
+nodetool status  //shows current status of the cluster 
+
+nodetool tpstats //shows thread pool status - critical for ops
+```
+
+**dsetool Examples:**
+```
+dsetool status //shows current status of cluster, including DSE features
+
+dsetool create_core //will create a Solr schema on Cassandra data for Search
+```
+
+**The main log you'll be taking a look at for troubleshooting outside of OpsCenter:**
+```
+/var/log/cassandra/system.log
+```
+
