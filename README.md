@@ -297,32 +297,30 @@ DSE Streaming Demo
 --------------------
 **Spark Notebook**
 
-[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. It's not a DataStax product. But we have an instance up and running so you can check out our streaming demo here: (http://52.36.23.184:9290/)
+[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. It's not a DataStax product. But we have an instance up and running so you can check out our streaming demo here: http://52.36.23.184:9290/
 
 >Have fun with it! See what you come up with :)
+
 ----------
 
 
 Getting Started and Ops
 --------------------
 
-Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then here are some core utilities you'll need to understand: nodetool and dsetool.
+Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then two core utilities you'll need to understand are nodetool and dsetool.
 
 **Utilities you'll want to know:**
 ```
 nodetool  //Cassandra's main utility tool
 dsetool   //DSE's main utility tool
 ```
-**Examples:**
+**nodetool Examples:**
 ```
 nodetool status  //shows current status of the cluster 
 nodetool tpstats //shows thread pool status - critical for ops
 ```
 
-```
-dsetool //main utility tool for DSE
-```
-**Examples:**
+**dsetool Examples:**
 ```
 dsetool status //shows current status of cluster, including DSE features
 
