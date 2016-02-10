@@ -106,7 +106,7 @@ Hands On Cassandra Primary Keys
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
-Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise.git) and the types of queries enabled by different primary keys.
+Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/RichReffner/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
 
 ----------
 
