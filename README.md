@@ -32,7 +32,6 @@ ssh datastax@40.114.88.162
 ssh datastax@137.117.45.18
 ssh datastax@137.117.45.212
         
-password: C@ssandra
 ```
 
 #### UI's you'll want to play around with
