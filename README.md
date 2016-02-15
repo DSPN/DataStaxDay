@@ -16,21 +16,21 @@ We have an 8 node cluster for you to play with! The cluster is currently running
 
 // You can login to any of these nodes 
 
-	ssh datastax@137.117.44.100
-        ssh datastax@137.117.45.234
-        ssh datastax@137.117.45.56
-        ssh datastax@104.211.3.101
-        ssh datastax@137.117.45.37
-        ssh datastax@40.114.93.63
-        ssh datastax@137.117.44.46
-        ssh datastax@137.117.45.106
-        ssh datastax@104.211.8.12
-        ssh datastax@137.117.44.219
-        ssh datastax@137.117.45.147
-        ssh datastax@137.117.44.174
-        ssh datastax@40.114.88.162
-        ssh datastax@137.117.45.18
-        ssh datastax@137.117.45.212
+ssh datastax@137.117.44.100
+ssh datastax@137.117.45.234
+ssh datastax@137.117.45.56
+ssh datastax@104.211.3.101
+ssh datastax@137.117.45.37
+ssh datastax@40.114.93.63
+ssh datastax@137.117.44.46
+ssh datastax@137.117.45.106
+ssh datastax@104.211.8.12
+ssh datastax@137.117.44.219
+ssh datastax@137.117.45.147
+ssh datastax@137.117.44.174
+ssh datastax@40.114.88.162
+ssh datastax@137.117.45.18
+ssh datastax@137.117.45.212
         
 password: C@ssandra
 ```
