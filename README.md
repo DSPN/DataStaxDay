@@ -13,27 +13,34 @@ Hands On Setup
 We have an 8 node cluster for you to play with! The cluster is currently running in both **search** and **analytics** mode so you can take advantage of both Spark and Solr on your Cassandra data. 
 
 ```
-// To SSH into the cluster:
-ssh root@ipaddress 
+
 // You can login to any of these nodes 
 
-Node 1: 52.36.57.127
-Node 2: 52.36.38.2
-Node 3: 52.36.66.173
-Node 4: 52.36.57.127
-Node 5: 52.36.62.120
-Node 6: 52.36.70.201
-Node 7: 52.36.69.158
-Node 8: 52.36.31.81
+	ssh datastax@137.117.44.100
+        ssh datastax@137.117.45.234
+        ssh datastax@137.117.45.56
+        ssh datastax@104.211.3.101
+        ssh datastax@137.117.45.37
+        ssh datastax@40.114.93.63
+        ssh datastax@137.117.44.46
+        ssh datastax@137.117.45.106
+        ssh datastax@104.211.8.12
+        ssh datastax@137.117.44.219
+        ssh datastax@137.117.45.147
+        ssh datastax@137.117.44.174
+        ssh datastax@40.114.88.162
+        ssh datastax@137.117.45.18
+        ssh datastax@137.117.45.212
+        
 password: C@ssandra
 ```
 
 #### UI's you'll want to play around with
  
- - OpsCenter: http://52.36.13.12:8888
- - Spark Master: http://52.36.13.12:7080
- - Solr UI: http://52.36.13.12:8983/solr
- - Spark Notebook http://52.36.23.184:9290/
+ - OpsCenter: http://40.114.89.113:8888
+ - Spark Master: http://40.114.89.113:7081/
+ - Solr UI: http://137.117.45.106:8983/solr
+ - //Spark Notebook http://52.36.23.184:9290/
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
