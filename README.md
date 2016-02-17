@@ -65,7 +65,7 @@ Try the following CQL commands in DevCenter. In addition to DevCenter, you can a
 ```cqlsh 127.0.0.1``` 
 > Make sure to replace 127.0.0.1 with the IP of the respective node 
 
-Let's make our first Cassandra Keyspace! 
+Let's make our first Cassandra Keyspace! If you are using uppercase letters, use double quotes around the keyspace.
 
 ```
 CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
