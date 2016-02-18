@@ -172,7 +172,7 @@ SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
 
 >This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
-For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy](www.academy.datastax.com) website. 
+For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy](academy.datastax.com) website. 
 
 ----------
 
