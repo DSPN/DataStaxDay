@@ -172,12 +172,12 @@ SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
 
 >This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
-For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy](academy.datastax.com) website. 
+For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy] https://academy.datastax.com website. 
 
 ----------
 
 
-Hands On DSE Search
+Hands On DSE Searchy.
 -------------
 DSE Search is awesome. You can configure which columns of which Cassandra tables you'd like indexed in **lucene** format to make extended searches more efficient while enabling features such as text search and geospatial search. 
 
