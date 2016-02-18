@@ -39,7 +39,6 @@ ssh datastax@137.117.45.212
  - OpsCenter: http://40.114.89.113:8888
  - Spark Master: http://40.114.89.113:7081/
  - Solr UI: http://137.117.45.106:8983/solr
- - Spark Notebook http://52.36.23.184:9290/
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
