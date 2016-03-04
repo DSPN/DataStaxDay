@@ -177,7 +177,7 @@ For more detailed classed on data modeling, consistency, and Cassandra 101, chec
 ----------
 
 
-Hands On DSE Searchy.
+Hands On DSE Search.
 -------------
 DSE Search is awesome. You can configure which columns of which Cassandra tables you'd like indexed in **lucene** format to make extended searches more efficient while enabling features such as text search and geospatial search. 
 
