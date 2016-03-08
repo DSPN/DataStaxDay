@@ -1,3 +1,5 @@
+https://github.com/mitchell-h/DataStaxDay/blob/master/README.md
+
 Welcome to DataStax Essentials Day!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
