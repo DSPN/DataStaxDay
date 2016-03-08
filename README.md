@@ -25,7 +25,6 @@ ssh datastax@23.96.186.234
 ssh datastax@23.96.187.35
 ssh datastax@23.96.185.203
 ssh datastax@23.96.185.7
-
 ssh datastax@23.96.187.145
 ssh datastax@23.96.187.174
 ssh datastax@23.96.187.54
