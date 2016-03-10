@@ -19,7 +19,6 @@ We have an 15 node cluster for you to play with! The cluster is currently runnin
 
 // You can login to any of these nodes 
 
-ssh datastax@23.96.187.17
 ssh datastax@23.96.185.22
 ssh datastax@23.96.184.141
 ssh datastax@23.96.186.76
@@ -304,13 +303,6 @@ SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_pr
 ----------
 
 
-DSE Streaming Demo
---------------------
-**Spark Notebook**
-
-[Spark Notebook](http://spark-notebook.io/) is an awesome tool for exploring Spark and making simple visualizations. It's not a DataStax product. But we have an instance up and running so you can check out our streaming demo here: http://52.36.23.184:9290/
-
->Have fun with it! See what you come up with :)
 
 ----------
 
