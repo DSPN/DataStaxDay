@@ -6,7 +6,6 @@ Welcome to DataStax Essentials Day!
 
 In this session, you'll learn all about DataStax Enterprise. It's a mix between presentation and hands-on. This is **obviously** your reference for the hands-on content. Feel free to bookmark this page for future reference! 
 
-https://goo.gl/lRS54N <---Sign up to win a Go-Pro
 ----------
 
 
