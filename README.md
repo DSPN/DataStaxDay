@@ -157,7 +157,7 @@ Let's try the **SELECT** statement again. Any changes in latency?
 
 **Let's try this again** but this time, let's pay attention to what's happening in the trace
 ```
-consistency local_all
+consistency local_one
 ```
 ```
 SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
