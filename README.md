@@ -138,6 +138,7 @@ Let's give it a shot.
 **In CQLSH**:
 
 ```tracing on```
+
 ```consistency all```
 
 >Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a **SELECT** statement to see the effects.
