@@ -17,24 +17,25 @@ We have an 15 node cluster for you to play with! The cluster is currently runnin
 ```
 
 // You can login to any of these nodes 
+ssh datastax@23.96.183.115
+ssh datastax@23.96.181.40
+ssh datastax@23.96.182.86
+ssh datastax@23.96.182.174
+ssh datastax@23.96.181.172
+ssh datastax@23.96.182.180
+ssh datastax@23.96.182.113
+ssh datastax@23.96.181.30
+ssh datastax@23.96.178.226
+ssh datastax@23.96.183.37
+ssh datastax@23.96.177.105
+ssh datastax@23.96.181.207
+ssh datastax@23.96.183.190
+ssh datastax@23.96.183.210
+ssh datastax@23.96.182.217
+23.96.218.197 -- OPSCENTER
 
-ssh datastax@23.96.185.22
-ssh datastax@23.96.184.141
-ssh datastax@23.96.186.76
-ssh datastax@23.96.186.81
-ssh datastax@23.96.186.234
-ssh datastax@23.96.187.35
-ssh datastax@23.96.185.203
-ssh datastax@23.96.185.7
-ssh datastax@23.96.187.145
-ssh datastax@23.96.187.174
-ssh datastax@23.96.187.54
-ssh datastax@23.96.185.101
-ssh datastax@23.96.184.32
-ssh datastax@23.96.184.42
-
-
-Password: C@ssandra
+login: datastax
+pw: foo123!
         
 ```
 
