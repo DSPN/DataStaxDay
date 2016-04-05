@@ -17,22 +17,27 @@ We have an 15 node cluster for you to play with! The cluster is currently runnin
 ```
 
 // You can login to any of these nodes 
-ssh datastax@23.96.183.115
-ssh datastax@23.96.181.40
-ssh datastax@23.96.182.86
-ssh datastax@23.96.182.174
-ssh datastax@23.96.181.172
-ssh datastax@23.96.182.180
-ssh datastax@23.96.182.113
-ssh datastax@23.96.181.30
-ssh datastax@23.96.178.226
-ssh datastax@23.96.183.37
-ssh datastax@23.96.177.105
-ssh datastax@23.96.181.207
-ssh datastax@23.96.183.190
-ssh datastax@23.96.183.210
-ssh datastax@23.96.182.217
-23.96.218.197 -- OPSCENTER
+ssh datastax@168.62.249.141
+ssh datastax@168.62.249.50
+ssh datastax@168.62.234.73
+ssh datastax@168.62.239.170
+ssh datastax@168.62.238.81
+ssh datastax@168.62.249.45
+ssh datastax@168.62.238.17
+ssh datastax@168.62.249.57
+ssh datastax@168.62.249.178
+ssh datastax@168.62.249.248
+ssh datastax@168.62.249.9
+ssh datastax@168.62.236.221
+ssh datastax@168.62.248.29
+ssh datastax@168.62.235.17
+ssh datastax@168.62.238.64
+ssh datastax@168.62.249.10
+ssh datastax@168.62.237.189
+ssh datastax@168.62.248.225
+ssh datastax@168.62.249.90
+ssh datastax@168.62.249.72
+168.62.249.72 -- OPSCENTER
 
 login: datastax
 pw: foo123!
@@ -41,9 +46,9 @@ pw: foo123!
 
 #### UI's you'll want to play around with
  
- - OpsCenter: http://23.96.218.197:8888/opscenter/index.html
- - Spark Master: http://23.96.182.174:7080/
- - Solr UI: http://23.96.183.115:8983/solr/#/
+ - OpsCenter: http://168.62.249.72:8888/opscenter/index.html
+ - Spark Master: http://168.62.249.45:7080/
+ - Solr UI: http://168.62.249.50:8983/solr/#/
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
