@@ -17,18 +17,22 @@ We have an 15 node cluster for you to play with! The cluster is currently runnin
 ```
 
 // You can login to any of these nodes 
-ssh datastax@168.62.235.229
-ssh datastax@168.62.234.79
-ssh datastax@168.62.237.199
-ssh datastax@168.62.236.248
-ssh datastax@168.62.232.120
-ssh datastax@168.62.235.146
-ssh datastax@168.62.237.192
-ssh datastax@168.62.233.40
-ssh datastax@168.62.237.130
-ssh datastax@168.62.232.75
-ssh datastax@168.62.232.194
-http://168.62.232.57:8888/opscenter/index.html -- OpsCenter
+ssh datastax@104.44.136.140
+ssh datastax@104.44.136.237
+ssh datastax@104.44.132.40
+ssh datastax@104.44.136.232
+ssh datastax@104.44.137.75
+ssh datastax@104.44.136.100
+ssh datastax@104.44.138.39
+ssh datastax@104.44.133.135
+ssh datastax@104.44.140.39
+ssh datastax@104.44.136.167
+ssh datastax@104.44.140.194
+ssh datastax@104.44.131.190
+ssh datastax@104.44.141.62
+ssh datastax@104.44.141.154
+ssh datastax@104.44.138.23
+http://104.44.136.232:8888/opscenter/index.html -- OpsCenter
 
 login: datastax
 pw: foo123!
@@ -37,9 +41,9 @@ pw: foo123!
 
 #### UI's you'll want to play around with
  
- - OpsCenter: http://168.62.232.57:8888/opscenter/index.html
- - Spark Master: http://168.62.232.120:7080/
- - Solr UI: http://168.62.232.120:8983/solr/#/
+ - OpsCenter: http://104.44.136.232:8888/opscenter/index.html
+ - Spark Master: http://104.44.136.237:7080/
+ - Solr UI: http://104.44.136.232:8983/solr/#/
 
 #### Connecting to the cluster from DevCenter
 - Simply add a new connection
