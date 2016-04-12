@@ -1,5 +1,9 @@
 https://github.com/mitchell-h/DataStaxDay/blob/master/README.md
 
+
+Raffle: http://goo.gl/forms/oEq1hfiQMa
+
+
 Welcome to DataStax Essentials Day!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
