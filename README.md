@@ -42,7 +42,7 @@ pw: foo123!
 #### UI's you'll want to play around with
  
  - OpsCenter: http://104.44.136.232:8888/opscenter/index.html
- - Spark Master: http://104.44.136.237:7080/
+ - Spark Master: http://104.44.132.40:7080/
  - Solr UI: http://104.44.136.232:8983/solr/#/
 
 #### Connecting to the cluster from DevCenter
