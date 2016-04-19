@@ -298,7 +298,9 @@ And something not too familiar in CQL...
 ```SELECT sum(price) FROM <your table>...;```
 
 Let's try having some fun on that Amazon data:
-
+```
+USE amazon;
+```
 ```
 SELECT sum(price) FROM metadata;
 ```
