@@ -21,22 +21,18 @@ We have an 15 node cluster for you to play with! The cluster is currently runnin
 ```
 
 // You can login to any of these nodes 
-ssh datastax@104.44.136.140
-ssh datastax@104.44.136.237
-ssh datastax@104.44.132.40
-ssh datastax@104.44.136.232
-ssh datastax@104.44.137.75
-ssh datastax@104.44.136.100
-ssh datastax@104.44.138.39
-ssh datastax@104.44.133.135
-ssh datastax@104.44.140.39
-ssh datastax@104.44.136.167
-ssh datastax@104.44.140.194
-ssh datastax@104.44.131.190
-ssh datastax@104.44.141.62
-ssh datastax@104.44.141.154
-ssh datastax@104.44.138.23
-http://104.44.136.232:8888/opscenter/index.html -- OpsCenter
+ssh datastax@168.62.235.29
+ssh datastax@168.62.235.221
+ssh datastax@168.62.234.215
+ssh datastax@168.62.233.220
+ssh datastax@168.62.236.57
+ssh datastax@168.62.233.252
+ssh datastax@168.62.235.157
+ssh datastax@168.62.233.192
+ssh datastax@168.62.232.51
+ssh datastax@168.62.237.159
+
+http://168.62.237.186:8888/opscenter/index.html
 
 login: datastax
 pw: foo123!
