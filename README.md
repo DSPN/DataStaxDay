@@ -1,9 +1,6 @@
 https://github.com/mitchell-h/DataStaxDay/blob/master/README.md
 
 
-Raffle: http://goo.gl/forms/oEq1hfiQMa
-
-
 Welcome to DataStax Essentials Day!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
@@ -45,14 +42,6 @@ pw: foo123!
  - Spark Master: http://104.44.132.40:7080/
  - Solr UI: http://104.44.136.232:8983/solr/#/
 
-#### Connecting to the cluster from DevCenter
-- Simply add a new connection
-- Enter a name for your connection
-- Enter any of the ip's from above as a contact host
-- Profit. 
-
-![DevCenter How To](http://i.imgur.com/8zwzmDj.png)
-
 
 ----------
 
@@ -61,6 +50,23 @@ Hands On DSE Cassandra
 -------------------
 
 Cassandra is the brains of DSE. It's an awesome storage engine that handles replication, availability, structuring, and of course, storing the data at lightning speeds. It's important to get yourself acquainted with the Cassandra to fully utilize the power of the DSE Stack. 
+
+
+To enable Search and Analytics on your cluster
+
+Stop DSE
+```
+sudo service dse stop
+```
+Edit /etc/default/dse to enable Search and analytics. Set SOLR_ENABLED and SPARK_ENABLED equal to 1
+```
+sudo vi /etc/default/dse
+```
+
+Start DSE
+```
+sudo service dse start
+```
 
 #### Creating a Keyspace, Table, and Queries 
 
