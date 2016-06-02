@@ -1,11 +1,8 @@
-https://github.com/mitchell-h/DataStaxDay/blob/master/README.md
-
-
-Welcome to DataStax Essentials Day!
+Welcome to the DataStax Labs!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
 
-In this session, you'll learn all about DataStax Enterprise. It's a mix between presentation and hands-on. This is **obviously** your reference for the hands-on content. Feel free to bookmark this page for future reference! 
+In this session, you'll learn all about DataStax Enterprise. It's a mix between presentation and hands-on. This is your reference for the hands-on content. Feel free to bookmark this page for future reference! 
 
 ----------
 
@@ -13,34 +10,7 @@ In this session, you'll learn all about DataStax Enterprise. It's a mix between 
 Hands On Setup
 -------------
 
-We have an 15 node cluster for you to play with! The cluster is currently running in both **search** and **analytics** mode so you can take advantage of both Spark and Solr on your Cassandra data. 
 
-```
-
-// You can login to any of these nodes 
-ssh datastax@168.62.235.29
-ssh datastax@168.62.235.221
-ssh datastax@168.62.234.215
-ssh datastax@168.62.233.220
-ssh datastax@168.62.236.57
-ssh datastax@168.62.233.252
-ssh datastax@168.62.235.157
-ssh datastax@168.62.233.192
-ssh datastax@168.62.232.51
-ssh datastax@168.62.237.159
-
-http://168.62.237.186:8888/opscenter/index.html
-
-login: datastax
-pw: foo123!
-        
-```
-
-#### UI's you'll want to play around with
- 
- - OpsCenter: http://104.44.136.232:8888/opscenter/index.html
- - Spark Master: http://104.44.132.40:7080/
- - Solr UI: http://104.44.136.232:8983/solr/#/
 
 
 ----------
