@@ -11,7 +11,7 @@ Hands On Setup
 -------------
 You should have a 3 node cluster provisioning in Microsoft Azure. Log in to your Microsoft Azure Portal. If you don't see it on the main dashboard, go into your "Resource Groups" to find the cluster that you provisioned. Within your Resource Group, you should see four Virtual Machines - one named "OpsCenter" and three named "dc0vm0", "dc0vm1", and "dc0vm2." 
 
-Take the public IP address from the OpsCenter node and add :8888 to it in your browser. i.e. type 13.67.227.135:8888 in your browser - this will take you to OpsCenter, the visual monitoring and management tool for your cluster. From either OpsCenter or your Azure portal, you can find the external IP addresses of your nodes.
+Take the public IP address from the OpsCenter node and add :8888 to it in your browser. i.e. type 13.67.227.135:8888 in your browser - this will take you to OpsCenter, the visual monitoring and management tool for your cluster. From either OpsCenter or your Azure portal, you can find the external IP addresses of your nodes, which will be used to access them.
 
 #### Accessing your nodes via Terminal (Mac users)
 
