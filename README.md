@@ -21,9 +21,11 @@ ssh <username>@<external IP address>
 ``` 
 
 So if your username is datastax, and IP address is 13.67.227.135 like above, the command will be: 
-```ssh datastax@13.67.227.135```
+```
+ssh datastax@13.67.227.135
+```
 
-You'll be prompted for your password - enter it and you will be brought to a command line where you should see:
+You'll be prompted for your password - enter it and you will be brought to a command line where you should see (if you are accessing dc0vm0):
 ```
 <user>@dc0vm0:~$
 ```
