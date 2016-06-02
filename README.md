@@ -11,6 +11,20 @@ Hands On Setup
 -------------
 You should have a 3 node cluster provisioning in Microsoft Azure. Log in to your Microsoft Azure Portal. If you don't see it on the main dashboard, go into your "Resource Groups" to find the cluster that you provisioned. Within your Resource Group, you should see four Virtual Machines - one named "OpsCenter" and three named "dc0vm0", "dc0vm1", and "dc0vm2." 
 
+Take the public IP address from the OpsCenter node and add :8888 to it in your browser. i.e. type 13.67.227.135:8888 in your browser - this will take you to OpsCenter, the visual monitoring and management tool for your cluster. From either OpsCenter or your Azure portal, you can find the external IP addresses of your nodes.
+
+#### Accessing your nodes via Terminal (Mac users)
+
+You will be using SSH in Terminal to access your nodes. You will need the external IP address of the node and the username/password you supplied during the provisioning process. In Terminal type the command, then hit enter:
+```
+ssh <username>@<external IP address>
+```
+You'll be prompted for your password - enter it and you will be brought to a command line where you should see:
+```
+<user>@dc0vm0:~$
+```
+
+#### Accessing your nodes via PuTTY (Windows users)
 
 
 
@@ -24,7 +38,7 @@ Hands On DSE Cassandra
 Cassandra is the brains of DSE. It's an awesome storage engine that handles replication, availability, structuring, and of course, storing the data at lightning speeds. It's important to get yourself acquainted with the Cassandra to fully utilize the power of the DSE Stack. 
 
 
-To enable Search and Analytics on your cluster
+#### Enable Search and Analytics on your cluster
 
 Stop DSE
 ```
@@ -32,7 +46,7 @@ sudo service dse stop
 ```
 Edit /etc/default/dse to enable Search and analytics. Set SOLR_ENABLED and SPARK_ENABLED equal to 1
 ```
-sudo vi /etc/default/dse
+sudo nano /etc/default/dse
 ```
 
 Start DSE
@@ -40,7 +54,7 @@ Start DSE
 sudo service dse start
 ```
 
-#### Creating a Keyspace, Table, and Queries 
+#### Create a Keyspace, Table, and Queries 
 
 Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line tool for CQL access to Cassandra. Start CQLSH like this:
 
