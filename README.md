@@ -16,9 +16,11 @@ Take the public IP address from the OpsCenter node and add :8888 to it in your b
 #### Accessing your nodes via Terminal (Mac users)
 
 You will be using SSH in Terminal to access your nodes. You will need the external IP address of the node and the username/password you supplied during the provisioning process. In Terminal type the command, then hit enter:
-```
-ssh <username>@<external IP address>
-```
+`ssh <username>@<external IP address>` 
+
+So if your username is datastax, and IP address is 13.67.227.135 like above, the command will be: 
+`ssh datastax@13.67.227.135`
+
 You'll be prompted for your password - enter it and you will be brought to a command line where you should see:
 ```
 <user>@dc0vm0:~$
