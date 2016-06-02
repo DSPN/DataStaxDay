@@ -9,6 +9,8 @@ In this session, you'll learn all about DataStax Enterprise. It's a mix between 
 
 Hands On Setup
 -------------
+You should have a 3 node cluster provisioning in Microsoft Azure. Log in to your Microsoft Azure Portal. If you don't see it on the main dashboard, go into your "Resource Groups" to find the cluster that you provisioned. Within your Resource Group, you should see four Virtual Machines - one named "OpsCenter" and three named "dc0vm0", "dc0vm1", and "dc0vm2." 
+
 
 
 
