@@ -32,6 +32,7 @@ You'll be prompted for your password - enter it and you will be brought to a com
 
 #### Accessing your nodes via PuTTY (Windows users)
 
+To SSH into your Azure server from Windows, open PuTTY (download [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) if necessary)
 
 
 
