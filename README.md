@@ -32,7 +32,10 @@ You'll be prompted for your password - enter it and you will be brought to a com
 
 #### Accessing your nodes via PuTTY (Windows users)
 
-To SSH into your Azure server from Windows, open PuTTY (download [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) if necessary)
+If necessary, download PuTTY [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Within PuTTY, enter the external IP address of your node in the "Host Name (or IP address)" box. Make sure the Port is 22 and the "Connection Type" is set to "SSH." Select "Open," which will be followed by a security prompt about accepting the RSA key of the server - select "Yes." Then you will be brought to a command line window asking for your username, followed by your password. After the correct credentials are enetered you will be brought to command line for your server:
+```
+<user>@dc0vm0:~$
+```
 
 
 
