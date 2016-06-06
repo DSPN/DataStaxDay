@@ -388,19 +388,17 @@ And something not too familiar in CQL...
 SELECT sum(price) FROM sales;
 ```
 
+Something more complex:
 ```
-SELECT sum(price) FROM metadata;
-```
-```
-SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
-```
-```
-SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
-```
-----------
+select name, item, sum(price) AS max_price FROM sales GROUP BY name,item ORDER BY max_price DESC limit 3;
 
+rich    Santa Cruz Tallboy 29er 4599.0                                          
+rich	Music Man Stingray Bass	1499.0
+marc	Apple iPad	999.0
+```
 
-
+> This is a small example of how Spark can be used to expand the capabilities of Cassandra. In DSE Analytics, you can leverage that integration to eliminate the need for ETL while performing stream analytics, batch analytics, leverage Spark's Machine Learning library, and more.
+  
 ----------
 
 
