@@ -181,7 +181,7 @@ Request complete | 2016-06-06 17:24:10.560530 |  13.67.225.95 |           6530
 ```
 > Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems.
 
-Let's compare a lower consistency level. Use the following command, followed by the same query as before:
+Let's compare a lower consistency level. Use the following command:
 
 ```
 consistency local_quorum
@@ -219,6 +219,11 @@ Only needing to receive an acknowledgement from one node dropped our query respo
 Request complete | 2016-06-06 17:29:05.488778 |  13.67.225.95 |            778
 ```
 
+To turn off tracing, simply run:
+```
+tracing off
+```
+
 For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy] https://academy.datastax.com website. 
 
 ----------
@@ -240,10 +245,49 @@ This by default will map Cassandra types to Solr types for you. Anyone familiar 
 
 ```
 SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:*"}';
-
-SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pple*"}'; 
 ```
-> For your reference, [here's the doc](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.html?scroll=srchCQL__srchSolrTokenExp) that shows some of things you can do
+
+Your output will look like this:
+
+```
+ name | time     | item                      | price | solr_query
+------+----------+---------------------------+-------+------------
+ marc | 20150207 | Jimi Hendrix Stratocaster |   899 |       null
+ marc | 20150205 |               Apple Watch |   299 |       null
+ rich | 20150208 |   Santa Cruz Tallboy 29er |  4599 |       null
+ rich | 20150206 |   Music Man Stingray Bass |  1499 |       null
+ marc | 20150204 |                Apple iPad |   999 |       null
+
+(5 rows)
+```
+
+Now let's try a filter query to return only the items purchased by Marc from Apple:
+
+```
+SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pple*"}';
+
+ name | time     | item        | price | solr_query
+------+----------+-------------+-------+------------
+ marc | 20150205 | Apple Watch |   299 |       null
+ marc | 20150204 |  Apple iPad |   999 |       null
+
+(2 rows)
+```
+
+We can also now control how the data is sorted based on a column value:
+
+```
+SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pple*", "sort":"price desc"}';
+
+ name | time     | item        | price | solr_query
+------+----------+-------------+-------+------------
+ marc | 20150204 |  Apple iPad |   999 |       null
+ marc | 20150205 | Apple Watch |   299 |       null
+
+(2 rows)
+```
+
+> For your reference, [here's the doc](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.html?scroll=srchCQL__srchSolrTokenExp) that shows some of things you can do.
 
 OK! Time to work with some more interesting data. Meet Amazon book sales data:
 >Note: This data is already in the DB, if you want to try it at home, [CLICK ME](https://github.com/Marcinthecloud/Solr-Amazon-Book-Demo). 
