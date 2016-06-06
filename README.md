@@ -180,8 +180,12 @@ How did we do? On my test cluster, I received the expected two results in 6530 m
 Request complete | 2016-06-06 17:24:10.560530 |  13.67.225.95 |           6530
 ```
 
-**Let's compare a lower consistency level:**
-```consistency local_quorum```
+Let's compare a lower consistency level:
+
+```
+consistency local_quorum
+```
+
 >Quorum means majority: RF/2 + 1. In our case, 3/2 = 1 + 1 = 2. At least 2 nodes need to acknowledge the request. 
 
 Let's try the **SELECT** statement again. Any changes in latency? Again I received the expected two results, but this time in 4448 microseconds:
