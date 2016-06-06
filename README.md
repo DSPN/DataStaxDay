@@ -167,7 +167,9 @@ tracing on
 consistency all
 ```
 
->Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a **SELECT** statement to see the effects.
+>Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. 
+
+Let's do a **SELECT** statement to see the effects:
 
 ```
 SELECT * FROM amp_event.sales where name='rich';
