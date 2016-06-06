@@ -289,10 +289,15 @@ SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pp
 
 > For your reference, [here's the doc](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.html?scroll=srchCQL__srchSolrTokenExp) that shows some of things you can do.
 
-OK! Time to work with some more interesting data. Meet Amazon book sales data:
->Note: This data is already in the DB, if you want to try it at home, [CLICK ME](https://github.com/Marcinthecloud/Solr-Amazon-Book-Demo). 
+#### (Homework) Metadata and clickstream DSE Search Exercise
 
-Click stream data:
+This exercise includes clickstream and metadta information publicly shared by Amazon. The instructions for the exercise are in a separate GitHub repo found [HERE](https://github.com/Marcinthecloud/Solr-Amazon-Book-Demo).
+
+Following the instructions on that repo (at another time) will show you another example that has multiple table structures, more data, and also examples of more complex queries that are possible with DSE Search. 
+
+Here's a preview of the table structures and the more complex search queries that you can perform:
+
+***Clickstream Data Table***
 ```
 CREATE TABLE amazon.clicks (
     asin text,
@@ -313,7 +318,8 @@ CREATE TABLE amazon.clicks (
     PRIMARY KEY (asin, seq, user)
 ) WITH CLUSTERING ORDER BY (seq DESC, user ASC);
 ```
-And book metadata: 
+
+***Book Metadata Table*** 
 
 ```
 CREATE TABLE amazon.metadata (
@@ -328,10 +334,8 @@ CREATE TABLE amazon.metadata (
 );
 ```
 
-> Example page of what's in the DB http://www.amazon.com/Science-Closer-Look-Grade-6/dp/0022841393/ref=sr_1_1?ie=UTF8&qid=1454964627&sr=8-1&keywords=0022841393
-
-So what are things you can do? 
->Filter queries: These are awesome because the result set gets cached in memory. 
+***Query Examples***
+> Filter queries: These are awesome because the result set gets cached in memory. 
 ```
 SELECT * FROM amazon.metadata WHERE solr_query='{"q":"title:Noir~", "fq":"categories:Books", "sort":"title asc"}' limit 10; 
 ```
@@ -351,6 +355,7 @@ SELECT * FROM amazon.metadata WHERE solr_query='{"q":"*:*", "fq":"{!join from=as
 ```
 SELECT * FROM amazon.metadata WHERE solr_query='{"q":"*:*", "facet":{"field":"categories"}, "fq":"{!join from=asin to=asin force=true fromIndex=amazon.clicks}area_code:415"}' limit 5;
 ```
+
 Want to see a really cool example of a live DSE Search app? Check out [KillrVideo](http://www.killrvideo.com/) and its [Git](https://github.com/luketillman/killrvideo-csharp) to see it in action. 
 
 ----------
