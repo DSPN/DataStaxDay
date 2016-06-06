@@ -368,27 +368,26 @@ Spark is general cluster compute engine. You can think of it in two pieces: **St
 
 It's a little tricky to have an entire class run streaming operations on a single cluster, so if you're interested in dissecting a full scale streaming app, check out [THIS git](https://github.com/retroryan/SparkAtScale).  
 
->Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL:
-
-```dse spark-sql --conf spark.ui.port=<Pick a random 4 digit number> --conf spark.cores.max=1```
-
-Note: if you get a bind error do this:
+>Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bing the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
+```
 export SPARK_LOCAL_IP=\`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1\`
+```
 
->Notice the spark.ui.port flag - Because we are on a shared cluster, we need to specify a radom port so we don't clash with other users. We're also setting max cores = 1 or else one job will hog all the resources. 
+```
+dse spark-sql
+```
 
 Try some CQL commands
 
-```use amp_event;```
-```SELECT * FROM sales WHERE...;```
+```
+use amp_event;
+```
 
 And something not too familiar in CQL...
-```SELECT sum(price) FROM <your table>...;```
+```
+SELECT sum(price) FROM sales;
+```
 
-Let's try having some fun on that Amazon data:
-```
-USE amazon;
-```
 ```
 SELECT sum(price) FROM metadata;
 ```
