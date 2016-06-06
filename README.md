@@ -366,9 +366,7 @@ Hands On DSE Analytics
 
 Spark is general cluster compute engine. You can think of it in two pieces: **Streaming** and **Batch**. **Streaming** is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). **Batch** includes both data crunching code and **SparkSQL**, a hive compliant SQL abstraction for **Batch** jobs. 
 
-It's a little tricky to have an entire class run streaming operations on a single cluster, so if you're interested in dissecting a full scale streaming app, check out [THIS git](https://github.com/retroryan/SparkAtScale).  
-
->Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bing the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
+Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bind the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
 ```
 export SPARK_LOCAL_IP=`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1`
 ```
@@ -398,6 +396,8 @@ marc	Apple iPad	999.0
 ```
 
 > This is a small example of how Spark can be used to expand the capabilities of Cassandra. In DSE Analytics, you can leverage that integration to eliminate the need for ETL while performing stream analytics, batch analytics, leverage Spark's Machine Learning library, and more.
+
+> If you're interested in dissecting a full scale streaming analytics app, check out [THIS GitHub repo](https://github.com/retroryan/SparkAtScale). 
   
 ----------
 
