@@ -63,6 +63,7 @@ Start DSE
 ```
 sudo service dse start
 ```
+***MAKE SURE TO DO THIS TO ALL 3 OF YOUR DSE NODES***
 
 #### Create a Keyspace, Table, and Queries 
 
