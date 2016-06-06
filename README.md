@@ -93,9 +93,7 @@ CREATE TABLE amp_event.sales (
 ) WITH CLUSTERING ORDER BY ( time DESC );
 ```
 
-> Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
-
-Let's get some data into your table! Cut and paste these inserts into DevCenter or CQLSH. Feel free to insert your own data values, as well. 
+Let's get some data into your table! Cut and paste these inserts into CQLSH. Feel free to insert your own data values, as well. 
 
 ```
 INSERT INTO amp_event.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
@@ -123,7 +121,6 @@ Hands On Cassandra Primary Keys
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
 Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/robotoil/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
-
 ----------
 
 
