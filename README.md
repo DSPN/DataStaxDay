@@ -370,7 +370,7 @@ It's a little tricky to have an entire class run streaming operations on a singl
 
 >Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bing the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
 ```
-export SPARK_LOCAL_IP=\`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1\`
+export SPARK_LOCAL_IP=`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1`
 ```
 
 ```
