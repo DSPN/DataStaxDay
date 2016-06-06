@@ -135,7 +135,7 @@ SELECT * FROM sales where name='marc' AND time >=20150205 ;
 ----------
 
 
-Hands On Cassandra Primary Keys (Homework)
+(Homework) Hands On Cassandra Primary Keys 
 -------------------
 
 ***The secret sauce of the Cassandra data model: Primary Key***
