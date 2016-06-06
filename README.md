@@ -213,8 +213,6 @@ consistency local_one
 SELECT * FROM amp_event.sales where name='rich';
 ```
 
-Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
-
 Only needing to receive an acknowledgement from one node dropped our query response time to 778 microseconds:
 
 ```
