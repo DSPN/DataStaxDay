@@ -67,21 +67,24 @@ sudo service dse start
 
 #### Create a Keyspace, Table, and Queries 
 
-Try the following CQL commands in DevCenter. In addition to DevCenter, you can also use **CQLSH** as an interactive command line tool for CQL access to Cassandra. Start CQLSH like this:
-
-```cqlsh 10.0.0.5``` 
-> Make sure to replace 127.0.0.1 with the IP of the respective node 
-
-Let's make our first Cassandra Keyspace! If you are using uppercase letters, use double quotes around the keyspace.
-
+You will be accessing DSE through **CQLSH**. This is an interactive command line tool for CQL (Cassandra Query Language) access to DSE. Start CQLSH with the following command in your command line terminal of your node:
 ```
-CREATE KEYSPACE <Enter your name> WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
+cqlsh
 ```
 
-And just like that, any data within any table you create under your keyspace will automatically be replicated 3 times. Let's keep going and create ourselves a table. You can follow my example or be a rebel and roll your own. 
+Let's make our first Cassandra Keyspace!
+```
+CREATE KEYSPACE amp_event WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
+```
+
+And just like that, any data within any table you create in the amp_event keyspace will automatically be replicated 3 times. 
+
+> **Hint** - SimpleStrategy is OK for a cluster using a single data center, but in the real world with multiple datacenters you would use the ```NetworkTopologyStrategy``` replication strategy. In fact, even if you start out on your development path with just a single data center, if there is even a chance that you might go to multiple data centers in the future, then you should use NetworkTopologyStrategy from the outset.
+
+Let's keep going and create ourselves a table. You can follow my example or be a rebel and roll your own. 
 
 ```
-CREATE TABLE <yourkeyspace>.sales (
+CREATE TABLE amp_event.sales (
 	name text,
 	time int,
 	item text,
@@ -95,17 +98,17 @@ CREATE TABLE <yourkeyspace>.sales (
 Let's get some data into your table! Cut and paste these inserts into DevCenter or CQLSH. Feel free to insert your own data values, as well. 
 
 ```
-INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
-INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150204, 'Apple iPad', 999.00);
-INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150206, 'Music Man Stingray Bass', 1499.00);
-INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('marc', 20150207, 'Jimi Hendrix Stratocaster', 899.00);
-INSERT INTO <yourkeyspace>.sales (name, time, item, price) VALUES ('rich', 20150208, 'Santa Cruz Tallboy 29er', 4599.00);
+INSERT INTO amp_event.sales (name, time, item, price) VALUES ('marc', 20150205, 'Apple Watch', 299.00);
+INSERT INTO amp_event.sales (name, time, item, price) VALUES ('marc', 20150204, 'Apple iPad', 999.00);
+INSERT INTO amp_event.sales (name, time, item, price) VALUES ('rich', 20150206, 'Music Man Stingray Bass', 1499.00);
+INSERT INTO amp_event.sales (name, time, item, price) VALUES ('marc', 20150207, 'Jimi Hendrix Stratocaster', 899.00);
+INSERT INTO amp_event.sales (name, time, item, price) VALUES ('rich', 20150208, 'Santa Cruz Tallboy 29er', 4599.00);
 ```
 
 And to retrieve it:
 
 ```
-SELECT * FROM <keyspace>.sales where name='marc' AND time >=20150205 ;
+SELECT * FROM amp_event.sales where name='marc' AND time >=20150205 ;
 ```
 >See what I did there? You can do range scans on clustering keys! Give it a try.
 
@@ -148,7 +151,7 @@ Let's give it a shot.
 >Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a **SELECT** statement to see the effects.
 
 ```
-SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+SELECT * FROM amp_event.sales where name='<enter name>';
 ```
 
 How did we do? 
@@ -165,7 +168,7 @@ Let's try the **SELECT** statement again. Any changes in latency?
 consistency local_one
 ```
 ```
-SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+SELECT * FROM amp_event.sales where name='<enter name>';
 ```
 
 Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
@@ -174,7 +177,7 @@ Take a look at the trace output. Look at all queries and contact points. What yo
 consistency local_quorum
 ```
 ```
-SELECT * FROM <yourkeyspace>.sales where name='<enter name>';
+SELECT * FROM amp_event.sales where name='<enter name>';
 ```
 
 >This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
@@ -191,7 +194,7 @@ DSE Search is awesome. You can configure which columns of which Cassandra tables
 Let's start off by indexing the tables we've already made. Here's where the dsetool really comes in handy:
 
 ```
-dsetool create_core <yourkeyspace>.sales generateResources=true reindex=true
+dsetool create_core amp_event.sales generateResources=true reindex=true
 ```
 
 >If you've ever created your own Solr cluster, you know you need to create the core and upload a schema and config.xml. That **generateResources** tag does that for you. For production use, you'll want to take the resources and edit them to your needs but it does save you a few steps. 
@@ -199,9 +202,9 @@ dsetool create_core <yourkeyspace>.sales generateResources=true reindex=true
 This by default will map Cassandra types to Solr types for you. Anyone familiar with Solr knows that there's a REST API for querying data. In DSE Search, we embed that into CQL so you can take advantage of all the goodness CQL brings. Let's give it a shot. 
 
 ```
-SELECT * FROM <keyspace>.sales WHERE solr_query='{"q":"name:*"}';
+SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:*"}';
 
-SELECT * FROM <keyspace>.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pple*"}'; 
+SELECT * FROM amp_event.sales WHERE solr_query='{"q":"name:marc", "fq":"item:*pple*"}'; 
 ```
 > For your reference, [here's the doc](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.html?scroll=srchCQL__srchSolrTokenExp) that shows some of things you can do
 
@@ -290,8 +293,8 @@ export SPARK_LOCAL_IP=\`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '
 
 Try some CQL commands
 
-```use <your keyspace>;```
-```SELECT * FROM <your table> WHERE...;```
+```use amp_event;```
+```SELECT * FROM sales WHERE...;```
 
 And something not too familiar in CQL...
 ```SELECT sum(price) FROM <your table>...;```
