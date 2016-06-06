@@ -116,11 +116,12 @@ SELECT * FROM amp_event.sales where name='marc' AND time >=20150205 ;
 Hands On Cassandra Primary Keys 
 -------------------
 
-#### The secret sauce of the Cassandra data model: Primary Key
+#### The secret sauce of the Cassandra data model: Primary Key (Homework)
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
 Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/robotoil/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
+
 ----------
 
 
