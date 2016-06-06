@@ -179,8 +179,9 @@ How did we do? On my test cluster, I received the expected two results in 6530 m
 ```
 Request complete | 2016-06-06 17:24:10.560530 |  13.67.225.95 |           6530
 ```
+> Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems.
 
-Let's compare a lower consistency level:
+Let's compare a lower consistency level. Use the following command, followed by the same query as before:
 
 ```
 consistency local_quorum
@@ -191,6 +192,10 @@ consistency local_quorum
 Let's try the **SELECT** statement again. Any changes in latency? Again I received the expected two results, but this time in 4448 microseconds:
 
 ```
+SELECT * FROM amp_event.sales where name='rich';
+```
+
+```
 Request complete | 2016-06-06 17:25:53.372448 |  13.67.225.95 |           4448
 ```
 
@@ -198,10 +203,12 @@ Request complete | 2016-06-06 17:25:53.372448 |  13.67.225.95 |           4448
 
 > **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
-**Let's try this again** but this time, let's pay attention to what's happening in the trace
+Let's try this one last time:
+
 ```
 consistency local_one
 ```
+
 ```
 SELECT * FROM amp_event.sales where name='rich';
 ```
@@ -209,6 +216,7 @@ SELECT * FROM amp_event.sales where name='rich';
 Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
 
 Only needing to receive an acknowledgement from one node dropped our query response time to 778 microseconds:
+
 ```
 Request complete | 2016-06-06 17:29:05.488778 |  13.67.225.95 |            778
 ```
