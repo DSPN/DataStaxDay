@@ -103,12 +103,34 @@ INSERT INTO amp_event.sales (name, time, item, price) VALUES ('marc', 20150207, 
 INSERT INTO amp_event.sales (name, time, item, price) VALUES ('rich', 20150208, 'Santa Cruz Tallboy 29er', 4599.00);
 ```
 
-And to retrieve it:
+At the moment we're prefixing the keyspace name to the table name in our CQL commands e.g. ```amp_event.sales```.
+
+Let's make it a little easier - we can set our ***default*** keyspace so that we dont need to type it in every time.
 
 ```
-SELECT * FROM amp_event.sales where name='marc' AND time >=20150205 ;
+use amp_event;
 ```
->See what I did there? You can do range scans on clustering keys! Give it a try.
+You can check the tables that are in that keyspace like this:
+```
+describe tables
+```
+
+> Of course, if there are tables with the **same name** in **other** keyspaces it may be wiser to continue to use a keyspace prefix to avoid inadvertently modifying the data in the wrong table!
+
+We can check how many rows there are in our table after the insert of five rows:
+```
+select count(*) from sales;
+```
+
+> Be careful with ```count(*)``` - it will scan the entire cluster. This wouldnt be a good idea in a big cluster with millions or billions of rows!
+
+To retrieve data:
+
+```
+SELECT * FROM sales where name='marc' AND time >=20150205 ;
+```
+
+> See what I did there? You can do range scans on clustering keys! Give it a try.
 
 ----------
 
