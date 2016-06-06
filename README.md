@@ -142,7 +142,7 @@ Hands On Cassandra Primary Keys (Homework)
 
 There are just a few key concepts you need to know when beginning to data model in Cassandra. But if you want to know the real secret sauce to solving your use cases and getting great performance, then you need to understand how Primary Keys work in Cassandra. 
 
-Let's dive in! Check out [this exercise for understanding how primary keys work](https://github.com/robotoil/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
+Check out [this exercise for understanding how primary keys work](https://github.com/robotoil/Cassandra-Primary-Key-Exercise/blob/master/README.md) and the types of queries enabled by different primary keys.
 
 ----------
 
@@ -160,47 +160,52 @@ In some cases, developers find Cassandra's replication fast enough to warrant lo
 
 Let's give it a shot. 
 
->During this exercise, I'll be taking down nodes so you can see the CAP theorem in action. We'll be using CQLSH for this one. 
-
 **In CQLSH**:
 
-```tracing on```
-
-```consistency all```
+```
+tracing on
+consistency all
+```
 
 >Any query will now be traced. **Consistency** of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a **SELECT** statement to see the effects.
 
 ```
-SELECT * FROM amp_event.sales where name='<enter name>';
+SELECT * FROM amp_event.sales where name='rich';
 ```
 
-How did we do? 
+How did we do? On my test cluster, I received the expected two results in 6530 microseconds:
+```
+Request complete | 2016-06-06 17:24:10.560530 |  13.67.225.95 |           6530
+```
 
 **Let's compare a lower consistency level:**
 ```consistency local_quorum```
 >Quorum means majority: RF/2 + 1. In our case, 3/2 = 1 + 1 = 2. At least 2 nodes need to acknowledge the request. 
 
-Let's try the **SELECT** statement again. Any changes in latency? 
->Keep in mind that our dataset is so small, it's sitting in memory on all nodes. With larger datasets that spill to disk, the latency cost become much more drastic. 
+Let's try the **SELECT** statement again. Any changes in latency? Again I received the expected two results, but this time in 4448 microseconds:
+
+```
+Request complete | 2016-06-06 17:25:53.372448 |  13.67.225.95 |           4448
+```
+
+> Keep in mind that our dataset is so small, it's sitting in memory on all nodes. With larger datasets that spill to disk, the latency cost become much more drastic. 
+
+> **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
 **Let's try this again** but this time, let's pay attention to what's happening in the trace
 ```
 consistency local_one
 ```
 ```
-SELECT * FROM amp_event.sales where name='<enter name>';
+SELECT * FROM amp_event.sales where name='rich';
 ```
 
 Take a look at the trace output. Look at all queries and contact points. What you're witnessing is both the beauty and challenge of distributed systems. 
 
+Only needing to receive an acknowledgement from one node dropped our query response time to 778 microseconds:
 ```
-consistency local_quorum
+Request complete | 2016-06-06 17:29:05.488778 |  13.67.225.95 |            778
 ```
-```
-SELECT * FROM amp_event.sales where name='<enter name>';
-```
-
->This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
 
 For more detailed classed on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy] https://academy.datastax.com website. 
 
