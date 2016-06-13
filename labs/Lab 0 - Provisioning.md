@@ -9,3 +9,9 @@ First off, open up a web browser and go to [http://portal.azure.com](http://port
 ![](img/lab0-1portal.png)
 
 Once you have logged in and accessed the portal, click on the Marketplace:
+
+![](img/lab0-2marketplace.png)
+
+Type "datastax" in the search bar and hit enter.
+
+![](img/
