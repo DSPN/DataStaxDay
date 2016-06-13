@@ -30,7 +30,7 @@ You will be presented with a new blade for basic information.  Admin username an
 
 For "Resource group" type in the name of a new group.  If you use an existing group you may experience name collisions.  For location use "West US."
 
-![](lab0-5basicsfilled.png)
+![](./img/lab0-5basicsfilled.png)
 
 When complete click "ok."
 
