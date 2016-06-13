@@ -56,4 +56,23 @@ You are now presented with a screen showing the Azure and DataStax terms.  Take 
 
 You are now redirected back to the portal.  You should see a new tile that says "Deploying DataStax Enterprise."  Deployment typically take 15-20 minutes.  At the end of deployment you will recieve a notification in the portal.
 
+When deployment completes you will be directed to your new resource group in the portal.
+
+![](./img/lab0-11complete.png)
+
+Scroll down to the "opscenter" IP address and click on that.
+
+![](./img/lab0-12opscip.png)
+
+In the cluster shown the IP is 13.88.25.34.  In your cluster it will be a different IP address.  Open a web browser to port 8888 on that IP address using http.  For this cluster, that is http://13.88.25.34:8888.  Note the URL you use will be different.
+
+![](./img/lab0-13opsc.png)
+
+Click on the nodes icon (below the house icon) to see a graphical respresentation of your cluster.
+
+![](./img/lab0-14ring.png)
+
+Assuming everything went well you should see a ring with three nodes.  If you have fewer nodes or OpsCenter isn't working, it's possible something failed during the deployment.  The most common issue is that Java failed to install as the Oracle repo sometimes times out.  For failed clusters, it's typically easiest to delete the failed cluster and deploy a new one.  If you encounter issues, please reach out to you CSA, DSA or [ben.lackey@datastax.com](mailto:ben.lackey@datastax.com).
+
+We're really looking forward to seeing you at the event!
 
