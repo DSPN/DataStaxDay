@@ -1,5 +1,11 @@
 # Lab 1 - Accessing the Cluster
 
+Resource Requirements
+Your laptop will need to be able to access the cluster that you create on Microsoft Azure.  Thus, you will need to install an ssh client. For MacOS, this is typically already installed.  For Microsoft Windows, you can install putty. Putty can be found at:
+
+http://www.putty.org
+
+
 In this session, you'll learn all about DataStax Enterprise. It's a mix between presentation and hands-on. This is obviously your reference for the hands-on content. This guide will be helpful after this event as a tutorial…so keep it around!
 
 Throughout this document, there will be code and commands listed.  The context of how you run commands will be denoted either by a ‘$’ for Linux based command-line operations, or CQL commands that either don’t have a prompt, or are preceded by ‘cqlsh>’.
