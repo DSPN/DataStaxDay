@@ -14,4 +14,46 @@ Once you have logged in and accessed the portal, click on the Marketplace:
 
 Type "datastax" in the search bar and hit enter.
 
-![](img/
+![](img/lab0-3marketplace.png)
+
+Now click on the "DataStax Enterprise" offer.
+
+![](img/lab0-4createblade.png)
+
+You are presented with a new blade that shows the DataStax Enterprise offer.  There is some text describing DataStax.  There's also a pulldown that is grayed out.  This uses the "Resource Manager" deployment model.  Azure Resource Manager (ARM) is the newest and preferred way to deploy to Azure.  If you want to learn more about the ARM templates that underly the Azure Marketplace offer, you can learn about them [here](https://github.com/DSPN/azure-resource-manager-dse).
+
+Click on the "create" button.
+
+![](img/lab0-5basics.png)
+
+You will be presented with a new blade for basic information.  Admin username and password are the SSH user and password for your cluster.  For this lab we suggest "datastax" and "foo123!"  If you use a different user and password please take note of it because it can take some time to reset them.
+
+For "Resource group" type in the name of a new group.  If you use an existing group you may experience name collisions.  For location use "West US."
+
+![](lab0-5basicsfilled.png)
+
+When complete click "ok."
+
+![](./img/lab0-6datastaxsettings.png)
+
+We're going to deploy a smaller cluster than the default.  Select 3 nodes and ensure that "Standard D2 v2" is selected as the machine size.  Note that if you are using a free trial you will need to use a "Standard D1 v2" instead.  If you are not using the free trial, we strongly recommend the Standard D2 v2 as that will have more resources available for the exercises.
+
+Ensure that you have the correct selections as show below.
+
+![](./img/lab0-7datastaxsettingsfilled.png) 
+
+Click "ok."
+
+![](./img/lab0-8summary.png)
+
+Azure will now validate the configured template.  If you want to take a look at the json based ARM tempalte you can click "Download template" at the top of the screen.  Assuming your quota is sufficient, you should see "validation passed" after a few moments.  Click "ok."
+
+![](./img/lab0-9buy.png)
+
+You are now presented with a screen showing the Azure and DataStax terms.  Take time to review those and select "Create" if you would like to continue.
+
+![](./img/lab0-10deploying.png)
+
+You are now redirected back to the portal.  You should see a new tile that says "Deploying DataStax Enterprise."  Deployment typically take 15-20 minutes.  At the end of deployment you will recieve a notification in the portal.
+
+
