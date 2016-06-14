@@ -1,18 +1,34 @@
 # Lab 1 - Accessing the Cluster
 
-Resource Requirements
-Your laptop will need to be able to access the cluster that you create on Microsoft Azure.  Thus, you will need to install an ssh client. For MacOS, this is typically already installed.  For Microsoft Windows, you can install putty. Putty can be found at:
+Open a web browser to your OpsCenter node.  If you are using Azure Marketplace, you can find that at [http://portal.azure.com](http://portal.azure.com) at detailed in [Lab 0](./Lab%200%20-%20Provisioning.md).  If you are using a test drive the URL is available there.  OpsCenter runs on port 8888 of the OpsCenter node in Azure.  For this cluster, it's running at http://13.88.25.34:8888.  The URL of your OpsCenter will be different.
 
-http://www.putty.org
+![](./img/lab1-1opscenter.png)
+
+Click on the nodes icon below the house icon to see a view of the nodes in your cluster.
+
+![](./img/lab1-2ring.png)
+
+Mouse over the nodes in your ring.  There should be three, with the names dc0vm0, dc0vm1 and dc0vm2.  Click on dc0vm0.
+
+![](./img/lab1-3opsdc0vm0ip.png)
+
+Make of note of that node's IP address.  In this case it is 13.88.28.80.  Your IP will be different.  We're now going to SSH into each node and modify a configuration file.  You will have to repeat these steps for nodes dc0vm0, dc0vm1 and dc0vm2.  If you are on a Mac, you already have SSH installed in your terminal.  If you are on Windows, you may need to install an SSH client.  A popular SSH client is Putty.  Putty can be downloaded from [http://www.putty.org](http://www.putty.org).
+
+For this cluster, the username is datastax.  So, in the terminal I can ssh to the node by running the command:
+
+```
+ssh datastax@13.88.28.80
+```
 
 
-In this session, you'll learn all about DataStax Enterprise. It's a mix between presentation and hands-on. This is obviously your reference for the hands-on content. This guide will be helpful after this event as a tutorial…so keep it around!
 
-Throughout this document, there will be code and commands listed.  The context of how you run commands will be denoted either by a ‘$’ for Linux based command-line operations, or CQL commands that either don’t have a prompt, or are preceded by ‘cqlsh>’.
+
+
+
+
 
 And before we go on, a quick explanation of what CQL, CQLSH and other aspects of Cassandra and DataStax Enterprise is in order:
 
-The Cassandra Query Language (CQL) is the primary language for communicating with the Cassandra database. The most basic way to interact with Cassandra is using the CQL shell, cqlsh. Using cqlsh, you can create keyspaces and tables, insert and query tables, plus much more. If you prefer a graphical tool, you can use DataStax DevCenter. For production, DataStax supplies a number of drivers so that CQL statements can be passed from client to cluster and back. Other administrative tasks can be accomplished using OpsCenter.
 
 Accessing the Cluster
 Now we have a 3 node cluster for you to play with! The cluster is initially setup as just a single Cassandra Data Center (DC). We will shortly show you how to set it up as a multi-model mixed-use cluster.  But first, we need to access the cluster. 
