@@ -48,11 +48,11 @@ primary key ((ch,dt),cu)
 );
 
 begin batch
-insert into sentiment1 (body,dt,ch,cu,sent) values ('I’m feeling sick.',20160102,'twitter','red bull','negative');
-insert into sentiment2 (body,dt,ch,cu,sent) values ('I’m feeling sick.',20160102,'twitter','red bull','negative');
-insert into sentiment3 (body,dt,ch,cu,sent) values ('I’m feeling sick.',20160102,'twitter','red bull','negative');
-insert into sentiment4 (body,dt,ch,cu,sent) values ('I’m feeling sick.',20160102,'twitter','red bull','negative');
-insert into sentiment5 (body,dt,ch,cu,sent) values ('I’m feeling sick.',20160102,'twitter','red bull','negative');
+insert into sentiment1 (body,dt,ch,cu,sent) values ('I am feeling sick.',20160102,'twitter','red bull','negative');
+insert into sentiment2 (body,dt,ch,cu,sent) values ('I am feeling sick.',20160102,'twitter','red bull','negative');
+insert into sentiment3 (body,dt,ch,cu,sent) values ('I am feeling sick.',20160102,'twitter','red bull','negative');
+insert into sentiment4 (body,dt,ch,cu,sent) values ('I am feeling sick.',20160102,'twitter','red bull','negative');
+insert into sentiment5 (body,dt,ch,cu,sent) values ('I am feeling sick.',20160102,'twitter','red bull','negative');
 apply batch;
 
 begin batch
@@ -72,11 +72,11 @@ insert into sentiment5 (body,dt,ch,cu,sent) values ('I feel sick, too.',20160102
 apply batch;
 
 begin batch
-insert into sentiment1 (body,dt,ch,cu,sent) values ('Dude, you’re sick.',20160103,'facebook','red bull','positive');
-insert into sentiment2 (body,dt,ch,cu,sent) values ('Dude, you’re sick.',20160103,'facebook','red bull','positive');
-insert into sentiment3 (body,dt,ch,cu,sent) values ('Dude, you’re sick.',20160103,'facebook','red bull','positive');
-insert into sentiment4 (body,dt,ch,cu,sent) values ('Dude, you’re sick.',20160103,'facebook','red bull','positive');
-insert into sentiment5 (body,dt,ch,cu,sent) values ('Dude, you’re sick.',20160103,'facebook','red bull','positive');
+insert into sentiment1 (body,dt,ch,cu,sent) values ('Dude, you are sick.',20160103,'facebook','red bull','positive');
+insert into sentiment2 (body,dt,ch,cu,sent) values ('Dude, you are sick.',20160103,'facebook','red bull','positive');
+insert into sentiment3 (body,dt,ch,cu,sent) values ('Dude, you are sick.',20160103,'facebook','red bull','positive');
+insert into sentiment4 (body,dt,ch,cu,sent) values ('Dude, you are sick.',20160103,'facebook','red bull','positive');
+insert into sentiment5 (body,dt,ch,cu,sent) values ('Dude, you are sick.',20160103,'facebook','red bull','positive');
 apply batch;
 
 begin batch

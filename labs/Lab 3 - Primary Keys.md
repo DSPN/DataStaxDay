@@ -6,9 +6,9 @@ There are just a few key concepts you need to know when beginning to data model 
 
 Let's dive in! 
 
-Since Cassandra use cases are typically focused on performance and up-time, it's critical to understand how Primary Key (PK) definition, query capabilities, and performance are related.
+Since Cassandra use cases are typically focused on performance and up-time, it's critical to understand how primary key (PK) definition, query capabilities, and performance are related.
 
-First off, let's use a CQL script to create tables and populate data.  To copy the script off Github to one of your nodes run the command:
+First off, let's use a CQL script to create tables and populate data.  To copy the script off GitHub to one of your nodes run the command:
 
 ```
 wget https://raw.githubusercontent.com/DSPN/DataStaxDay/master/labs/cql/lab3-primary-key-tables-data.cql
@@ -37,7 +37,7 @@ cqlsh
 Now we can source the script to run it with the command:
 
 ```
-source lab3-primary-key-tables-data.cql
+source 'lab3-primary-key-tables-data.cql'
 ```
 
 
