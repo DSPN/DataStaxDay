@@ -8,7 +8,8 @@ Let's dive in!
 
 Since Cassandra use cases are typically focused on performance and up-time, it's critical to understand how Primary Key (PK) definition, query capabilities, and performance are related.
 
-Here's how to do the exercise
+Here's how to do the exercise:
+
 1. Use these CQL scripts to create tables and populate data:
 https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/rich-mods-1/Cassandra-Primary-Key-Tables-Data.cql
 You'll notice all tables are exactly the same except for the primary key definition.
