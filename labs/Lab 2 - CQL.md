@@ -1,4 +1,4 @@
-# Creating a Keyspace, Table, and Queries
+# Lab 2 - CQL
 
 Use SSH to connect to one of your nodes.  We're now going to start the cqlsh client.
 
