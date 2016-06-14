@@ -68,7 +68,7 @@ consistency local_quorum
 SELECT * FROM retailer.sales where name='chuck';
 ```
 
-Quorum means majority: RF/2 + 1. In our case, 3/2 = 1 + 1 = 2. At least 2 nodes need to acknowledge the request.
+In this case, be sure to take note of the time the query took to complete.  Quorum means majority: RF/2 + 1. In our case, 3/2 = 1 + 1 = 2. At least 2 nodes need to acknowledge the request.
 
 Let's try the SELECT statement again.
 
