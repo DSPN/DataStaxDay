@@ -50,7 +50,11 @@ For one table at a time, copy/paste/run the groups of queries. In other words, r
 
 ## Extra Credit 1
 
-Did the query "select * from sentimentX where ch = 'facebook' and dt >= 20160102 and dt <= 20160103;" work for any of the tables? Why or why not?
+Did this query work for any of the tables?  Why or why not?
+
+```
+select * from sentimentX where ch = 'facebook' and dt >= 20160102 and dt <= 20160103;
+```
 
 ## Extra Credit 2
 
