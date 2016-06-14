@@ -29,5 +29,5 @@ SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
 SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
 ```
 
-If you want to learn more about Spark, DataBricks, has some great training on it at https://databricks.com/spark/training  Learning about Scala can be helpful as well and there's an amazing course on it available at coursera.org/learn/progfun1
+If you want to learn more about Spark, DataBricks, has some great training on it at https://databricks.com/spark/training  Learning about Scala can be helpful as well and there's an amazing course on it available at http://coursera.org/learn/progfun1
 
