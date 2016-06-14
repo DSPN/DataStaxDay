@@ -21,5 +21,5 @@ Here's our agenda for today:
     * Lecture - Analytics
     * [Lab 6 - Analytics](./labs/Lab%206%20-%20Analytics.md)
     * [Lab 7 - Operations](./labs/Lab%207%20-%20Operations.md)
-* Lecture - Wrap Up, Raffle and Next Steps
+* Lecture - Next Steps (and the Raffle!)
 
