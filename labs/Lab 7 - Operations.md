@@ -27,7 +27,7 @@ Shows current status of cluster, including DSE features:
 dsetool status
 ```
 
-The main log you'll be taking a look at for troubleshooting outside of OpsCenter can be view with the command:
+The main log you'll be taking a look at for troubleshooting outside of OpsCenter can be viewed with the command:
 
 ```
 cat /var/log/cassandra/system.log
