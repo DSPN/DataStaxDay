@@ -30,11 +30,11 @@ SELECT * FROM retailer.sales WHERE solr_query='{"q":"name:chuck", "fq":"item:*ic
 
 ![](./img/lab5-3solrselect.png)
 
-For your reference, here's the doc that shows some of things you can do: http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.html?scroll=srchCQL__srchSolrTokenExp
+For your reference, here's the doc that shows some of things you can do: http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.htmlp
 
 ## Retail Book Workshop
 
-OK! Time to work with some more interesting data. Meet the Retail book sales data: https://github.com/chudro/Retail-Book-Demo
+Ok! Time to work with some more interesting data. Meet the Retail book sales data: https://github.com/chudro/Retail-Book-Demo
 
 First, you’ll need to set this up within your Azure Instances. Pick your dc0vm0 node and log into it.  Now run a few commands to set up the Cassandra Python driver and make a local copy of the Retail Book Demo.  This will take a few minutes to run.
 
@@ -56,57 +56,30 @@ Great!  Now that is all installed, check what your 10.0.0.x private address is u
 ifconfig
 ```
 
-Edit the solr_dataloader.py file
+![](./img/lab5-5tenzero.png)
 
-$ sudo vi solr_dataloader.py
+For this node the address is 10.0.0.6.  Yours may be different.  Now we're going to edit the solr_dataloader.py file.
 
-Change the line cluster = Cluster(['node0','node1','node2']) to cluster = Cluster(['10.0.0.X’]) Make sure to replace 127.0.0.1 with the IP of the respective node
+```
+sudo vi solr_dataloader.py
+```
 
-$ sudo python solr_dataloader.py
+Change the line cluster = Cluster(['node0','node1','node2']) to cluster = Cluster(['10.0.0.x’]) Make sure to replace 127.0.0.1 with the IP of the respective node
 
-$ ./create_core.sh
+![](./img/lab5-6loaderip.png)
 
-Example page of what's in the DB:
+Now run the data loader and then create a solr core on top of the new data.
 
-https://www.amazon.com/Science-Closer-Look-Grade-6/dp/0022841393?ie=UTF8&keywords=0022841393&qid=1454964627&ref_=sr_1_1&sr=8-1
+```
+sudo python solr_dataloader.py
+./create_core.sh
+```
 
-Create the click stream data table. Inside cqlsh, create the tables you’ll need:
+![](./img/lab5-7coreandload.png)
 
-use retailer;
+Here's an example page of what's in the database now: https://www.amazon.com/Science-Closer-Look-Grade-6/dp/0022841393?ie=UTF8&keywords=0022841393&qid=1454964627&ref_=sr_1_1&sr=8-1
 
-CREATE TABLE retailer.clicks (
-    asin text,
-    seq timeuuid,
-    user uuid,
-    area_code text,
-    city text,
-    country text,
-    ip text,
-    loc_id text,
-    location text,
-    location_0_coordinate double,
-    location_1_coordinate double,
-    metro_code text,
-    postal_code text,
-    region text,
-    solr_query text,
-    PRIMARY KEY (asin, seq, user)
-) WITH CLUSTERING ORDER BY (seq DESC, user ASC);
-
-And book metadata:
-
-CREATE TABLE retailer.metadata (
-    asin text PRIMARY KEY,
-    also_bought set<text>,
-    buy_after_viewing set<text>,
-    categories set<text>,
-    imurl text,
-    price double,
-    solr_query text,
-    title text
-);
-
-So, what are the things you can do?
+Now that we've prepared all that, what can we do?  Lots of things it turns out...
 
 ## Filter queries
 
