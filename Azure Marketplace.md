@@ -19,7 +19,7 @@ Here's our agenda for today:
     * [Lab 5 - Search](./labs/Lab%205%20-%20Search.md)
 * Analytics
     * Lecture - Analytics
-    * [Lab 6 - Analytics](Lab%206%20-%20Analytics.md)
-    * [Lab 7 - Operations](Lab%207%20-%20Operations.md)
+    * [Lab 6 - Analytics](./labs/Lab%206%20-%20Analytics.md)
+    * [Lab 7 - Operations](./labs/Lab%207%20-%20Operations.md)
 * Lecture - Wrap Up, Raffle and Next Steps
 
