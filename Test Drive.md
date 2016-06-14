@@ -7,7 +7,7 @@ Congratulations on starting a cluster in the Azure Test Drive!  During your thre
 * [Lab 3 - Primary Keys](./labs/Lab%203%20-%20Primary%20Keys.md)
 * [Lab 4 - Consistency](./labs/Lab%204%20-%20Consistency.md)
 * [Lab 5 - Search](./labs/Lab%205%20-%20Search.md)
-* [Lab 6 - Analytics](Lab%206%20-%20Analytics.md)
-* [Lab 7 - Operations](Lab%207%20-%20Operations.md)
+* [Lab 6 - Analytics](./labs/Lab%206%20-%20Analytics.md)
+* [Lab 7 - Operations](./labs/Lab%207%20-%20Operations.md)
 
 We hope you enjoy these labs.  Once complete, you may want to spin up your own cluster in the [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/partners/datastax/datastax-enterprisesingledc/) or continue your learning at [http://academy.datastax.com](http://academy.datastax.com)
