@@ -42,7 +42,7 @@ Now we're going to use a text editor to change two parameters.  These machines h
 vi /etc/default/dse
 ```
 
-In vi you can type "i" to enter insert mode.  When done editing, "esc" will quit insert mode.  To write (save) and quit type ":wq"  vi is a really powerful text editor but has quite a learning curve.  A good getting started guide is [here](https://www.washington.edu/computing/unix/vi.html).  For a more humorous summary, [this](http://www.theregister.co.uk/2003/09/11/bill_joys_greatest_gift/) is a classic.
+In vi you can type "i" to enter insert mode.  When done editing, pressing the escape key will quit insert mode.  To write (save) and quit type ":wq"  vi is a really powerful text editor but has quite a learning curve.  A good getting started guide is [here](https://www.washington.edu/computing/unix/vi.html).  For a more humorous summary, [this](http://www.theregister.co.uk/2003/09/11/bill_joys_greatest_gift/) is a classic.
 
 We want to change two parameter to "1."  Those are:
 
