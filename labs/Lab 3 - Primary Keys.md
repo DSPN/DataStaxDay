@@ -8,12 +8,44 @@ Let's dive in!
 
 Since Cassandra use cases are typically focused on performance and up-time, it's critical to understand how Primary Key (PK) definition, query capabilities, and performance are related.
 
-Here's how to do the exercise:
+First off, let's use a CQL script to create tables and populate data.  To copy the script off Github to one of your nodes run the command:
 
-1. Use these CQL scripts to create tables and populate data:
-https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/rich-mods-1/Cassandra-Primary-Key-Tables-Data.cql
+```
+wget https://raw.githubusercontent.com/DSPN/DataStaxDay/master/labs/cql/lab3-primary-key-tables-data.cql
+```
+
+![](./img/lab3-1wget.png)
+
+Take a look at the file in your favorite text editor, for instance using vi by running the command:
+
+```
+vi lab3-primary-key-tables-data.cql
+```
+
+![](./img/lab3-2vi.png)
+
 You'll notice all tables are exactly the same except for the primary key definition.
-2. Look at these queries:
+
+Now let's run the cql script.  To do so, start cqlsh by running:
+
+```
+cqlsh
+```
+
+![](./img/lab3-3cqlsh.png)
+
+Now we can source the script to run it with the command:
+
+```
+source lab3-primary-key-tables-data.cql
+```
+
+
+
+
+
+
+. Look at these queries:
 https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/master/Cassandra-Primary-Key-Queries.cql
 For one table at a time, copy/paste/run the groups of queries. In other words, run all of the queries for sentiment1 at the same time. Check out Cassandra's response. Then run all queries for sentiment2 at the same time, etc. You'll notice that some of the queries work against some of the tables, but not all. Why?
 
