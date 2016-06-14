@@ -12,7 +12,7 @@ Let's give it a shot.
 
 ## This DeathStar is Operational!
 
-First, we will shutdown one of the nodes so you can see the CAP theorem in action. Go to your browser, and access OpsCenter at http://opscenter_ip_address:8888
+First, we will shutdown one of the nodes so you can see the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem) in action. Go to your browser, and access OpsCenter at http://opscenter_ip_address:8888
 
 ![](./img/lab4-1opsc.png)
 
