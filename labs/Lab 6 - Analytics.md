@@ -1,27 +1,33 @@
-# Lab 4 - Analytics
+# Lab 6 - Analytics
 
-Hands On DSE Analytics
-Spark is general cluster compute engine. You can think of it in two pieces: Streaming and Batch. Streaming is the processing of incoming data (in micro batches) before it gets written to Cassandra (or any database). Batch includes both data crunching code and SparkSQL, a hive compliant SQL abstraction for Batch jobs.
+[Apache Spark](http://spark.apache.org/) is a general purpose data processing engine built in the functional programming language Scala.  It's one of the hottest things in industry today and a great skill to pick up.  Spark supports both batch and streaming (which is actually a micro batch). Batch includes both data crunching code and SparkSQL,  Streaming is the processing of incoming data (in micro batches) before it gets written to a data store, in our case Cassandra.  Spark even includes a machine learning library called [Spark MLlib](http://spark.apache.org/mllib/).
 
-It's a little tricky to have an entire class run streaming operations on a single cluster, so if you're interested in dissecting a full scale streaming app, check out this git:
+If you're interested in dissecting a full scale streaming app, check out this git: https://github.com/retroryan/SparkAtScale
 
-https://github.com/retroryan/SparkAtScale
+Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bind the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
 
+```
+export SPARK_LOCAL_IP=`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1`
+dse spark-sql
+```
 
-Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL:
+![](./img/lab6-1sparksql.png)
 
-$ dse spark-sql --conf spark.ui.port=<Pick a random 4 digit number> --conf spark.cores.max=1
+Now we can try some SQL commands.  Note that this is SQL, not CQL.
 
-Notice the spark.ui.port flag - Because we are on a shared cluster, we need to specify a radom port so we don't clash with other users. We're also setting max cores = 1 or else one job will hog all the resources.
+```use retailer; 
+SELECT * FROM <your table> WHERE...;
+```
 
-Try some CQL commands:
+![](./img/lab6-2sparkquery.png)
 
-cqlsh> use retailer; 
-cqlsh> SELECT * FROM <your table> WHERE...;
+We can give a variety of more complex queries such as:
 
-And something not too familiar in CQL... SELECT sum(price) FROM <your table>...;
-Let's try having some fun on that Book data:
+```
+SELECT sum(price) FROM metadata;
+SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
+SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
+```
 
-cqlsh> SELECT sum(price) FROM metadata;
-cqlsh> SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
-cqlsh> SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
+If you want to learn more about Spark, DataBricks, has some great training on it at https://databricks.com/spark/training  Learning about Scala can be helpful as well and there's an amazing course on it available at coursera.org/learn/progfun1
+
