@@ -9,21 +9,22 @@ Let's dive in!
 Since Cassandra use cases are typically focused on performance and up-time, it's critical to understand how Primary Key (PK) definition, query capabilities, and performance are related.
 
 Here's how to do the exercise
-1) Use these CQL scripts to create tables and populate data:
+1. Use these CQL scripts to create tables and populate data:
 https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/rich-mods-1/Cassandra-Primary-Key-Tables-Data.cql
 You'll notice all tables are exactly the same except for the primary key definition.
-2) Look at these queries:
+2. Look at these queries:
 https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/master/Cassandra-Primary-Key-Queries.cql
 For one table at a time, copy/paste/run the groups of queries. In other words, run all of the queries for sentiment1 at the same time. Check out Cassandra's response. Then run all queries for sentiment2 at the same time, etc. You'll notice that some of the queries work against some of the tables, but not all. Why?
-3) Extra Credit 1: Did the query "select * from sentimentX where ch = 'facebook' and dt >= 20160102 and dt <= 20160103;" work for any of the tables? Why or why not?
-4) Extra Credit 2: What would you do if you needed to find all messages with positive sentiment?
-5) Challenge Question: In the real world, how many tweets would you guess occur per day? As of this writing, Twitter generates ~500M tweets/day according to these guys, Internet Live Stats: 
-http://www.internetlivestats.com/twitter-statistics/
+3. Extra Credit 1: Did the query "select * from sentimentX where ch = 'facebook' and dt >= 20160102 and dt <= 20160103;" work for any of the tables? Why or why not?
+4. Extra Credit 2: What would you do if you needed to find all messages with positive sentiment?
+5. Challenge Question: In the real world, how many tweets would you guess occur per day? As of this writing, Twitter generates ~500M tweets/day according to these guys, Internet Live Stats: http://www.internetlivestats.com/twitter-statistics/
+
 Let's say we need to run a query that captures all tweets over a specified range of time. Given our data model scenario, we simply data model a primary key value of (ch, dt) to capture all tweets in a single Cassandra row sorted in order of time, right? Easy! But, alas, the Cassandra logical limit of single row size (2B columns in C* v2.1) would fill up after about 4 days. Ack! Our primary key won't work. What would we do to solve our query?
 
 Have fun!
 
-Cassandra Data Model and Query Pro-Tips
+## Cassandra Data Model and Query Pro-Tips
+
 Here are a few Cassandra data modeling pro-tips and principles to stay out of trouble and get you moving the right direction:
 
 * Primary Keys: Know what a partition key is. Know what a clustering key is. Know how they work for storing the data and for allowing query functionality. This exercise is a great start.
