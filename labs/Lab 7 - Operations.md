@@ -27,12 +27,6 @@ Shows current status of cluster, including DSE features:
 dsetool status
 ```
 
-Will create a Solr schema on Cassandra data for Search:
-
-```
-dsetool create_core
-```
-
 The main log you'll be taking a look at for troubleshooting outside of OpsCenter can be view with the command:
 
 ```
