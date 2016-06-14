@@ -59,9 +59,7 @@ Any query will now be traced. Consistency of all means all 3 replicas need to re
 SELECT * FROM retailer.sales where name='chuck';
 ```
 
-How did we do?
-
-Let's compare a lower consistency level: 
+Note that the query fails.  Why did it fail?  Next we're going to change the consistency level to make our query succeed.  Let's compare a lower consistency level: 
 
 ```
 consistency local_quorum

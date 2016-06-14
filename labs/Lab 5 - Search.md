@@ -64,7 +64,7 @@ For this node the address is 10.0.0.6.  Yours may be different.  Now we're going
 sudo vi solr_dataloader.py
 ```
 
-Change the line cluster = Cluster(['node0','node1','node2']) to cluster = Cluster(['10.0.0.x’]) Make sure to replace 127.0.0.1 with the IP of the respective node
+Change the line cluster = Cluster(['node0','node1','node2']) to cluster = Cluster(['10.0.0.x’])
 
 ![](./img/lab5-6loaderip.png)
 

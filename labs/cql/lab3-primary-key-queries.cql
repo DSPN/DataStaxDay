@@ -1,3 +1,5 @@
+use primary_keys_ks;
+
 select * from sentiment1 where dt = 20160102;
 select * from sentiment1 where ch = 'facebook' and dt = 20160102;
 select * from sentiment1 where ch = 'facebook' and dt > 20160101;
