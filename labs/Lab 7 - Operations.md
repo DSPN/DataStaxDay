@@ -1,3 +1,5 @@
+# Lab 7 - Operations
+
 Getting Started with DSE Ops
 Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then two core utilities you'll need to understand are nodetool and dsetool.
 

@@ -20,5 +20,6 @@ Here's our agenda for today:
 * Analytics
     * Lecture - Analytics
     * [Lab 6 - Analytics](Lab%206%20-%20Analytics.md)
-    * [Lab 7 - DSE Operations](Lab%207%20-%20DSE%20Operations.md)
+    * [Lab 7 - Operations](Lab%207%20-%20Operations.md)
 * Lecture - Wrap Up, Raffle and Next Steps
+
