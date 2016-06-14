@@ -82,7 +82,6 @@ Take a look at the trace output. Look at all queries and contact points. What yo
 ```
 consistency local_quorum
 SELECT * FROM retailer.sales where name='chuck';
-
 ```
 
 This looks much better now doesn't it? LOCAL_QUORUM is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant CL=LOCAL_ONE.
