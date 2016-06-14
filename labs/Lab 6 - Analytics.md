@@ -15,8 +15,9 @@ dse spark-sql
 
 Now we can try some SQL commands.  Note that this is SQL, not CQL.
 
-```use retailer; 
-SELECT * FROM <your table> WHERE...;
+```
+use retailer; 
+SELECT sum(price) FROM metadata;
 ```
 
 ![](./img/lab6-2sparkquery.png)
@@ -24,7 +25,6 @@ SELECT * FROM <your table> WHERE...;
 We can give a variety of more complex queries such as:
 
 ```
-SELECT sum(price) FROM metadata;
 SELECT m.title, c.city FROM metadata m JOIN clicks c ON m.asin=c.asin;
 SELECT asin, sum(price) AS max_price FROM metadata GROUP BY asin ORDER BY max_price DESC limit 1;
 ```
