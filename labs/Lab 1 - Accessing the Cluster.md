@@ -20,83 +20,60 @@ For this cluster, the username is datastax.  So, in the terminal I can ssh to th
 ssh datastax@13.88.28.80
 ```
 
+You may be prompted to accept the node's key.  If so, type "yes" and hit enter.
 
+![](./img/lab1-4sshlogin.png)
 
+Enter your password and hit enter.
 
+![](./img/lab1-5sshlogin2.png)
 
+Great!  You're now logged into one of your database nodes.  We're going to need to be root to edit files and restart services.  To do that, run the command
 
+```
+sudo su
+```
 
+Now we're going to use a text editor to change two parameters.  These machines have vi, nano and vim installed.  You can use whichever you prefer.  To edit the file with vi run the command:
 
-And before we go on, a quick explanation of what CQL, CQLSH and other aspects of Cassandra and DataStax Enterprise is in order:
+```
+vi /etc/default/dse
+```
 
+We want to change two parameter to "1."  Those are:
 
-Accessing the Cluster
-Now we have a 3 node cluster for you to play with! The cluster is initially setup as just a single Cassandra Data Center (DC). We will shortly show you how to set it up as a multi-model mixed-use cluster.  But first, we need to access the cluster. 
+* SOLR_ENABLED=1
+* SPARK_ENABLED=1
 
-Where is my Cluster?
-Determine the IP addresses of all of the nodes in your cluster and write them down. You can do this by selecting the Resource Group that you created, then select each of the nodes, one by one. The naming convention for your 3 nodes will likely be: dc0vm0, dc0vm1 and dc0vm2.  You can access the nodes either by their Public IP address or their DNS name. You will also need the Public IP address and DNS name for the opscenter node as well.
+![](./img/lab1-6vi.png)
 
+We now need to save the file and exit the text editor.  At that point we'll want to restart the DSE service, so that the new parameters are picked up.  We can do that by running the command:
 
+```
+service dse restart
+```
 
-To SSH into the cluster:
+The service will come back with messages saying that Spark and Solr are now running as shown below.
 
-$ ssh datastax@ip_address 
+![](./img/lab1-7service.png)
 
-or
+Important -- Repeat these steps to enable Spark and Solr on nodes dc0vm1 and dc0vm2.
 
-$ ssh datastax@dns_name
+Once complete, you can check all the configs are properly set by running the following command from any node.
 
-You will be using the login and password you entered from the Azure VM creation steps above (e.g. username: datastax, password: C@ssandra).
+```
+dsetool status
+```
 
-Search and Analytics Setup
-To setup DataStax Enterprise to run both the Search and Analytics integrated components on your cluster, follow these steps on all of your nodes (dc0vmX only, not opscenter):
+![](./img/lab1-8dsetoolstatus.png)
 
-$ ssh datastax@ip_address
+Note that one of the nodes says "(JT)"  This is your Spark job track.  You can view a webpage with information about Spark jobs by opening a web browser to port 7080 on that node.  For this cluster that is at http://13.88.29.37:7080.  Note your URL will be different.
 
-After logging in:
+![](./img/lab1-9sparkjt.png)
 
-$ sudo vi /etc/default/dse
+We also enabled Solr on our nodes.  You can actually view the Solr UI on any node.  However, for our exercises we're going to use dc0vm0.  Open a web browser to port 8983 /solr/ on dc0vm0.  For this cluster that is at http://13.88.28.80:8983/solr.  The URL will be different for your cluster.
 
-Change the following:
+![](./img/lab1-10solrui.png)
 
-SOLR_ENABLED=1
-SPARK_ENABLED=1
-
-Now save the file. If you need help with “vi”, ask your instructor for assistance. You can also use nano, vim, or any Linux seditor of choice to edit these files.
-
-Now stop and restart the Cassandra server. To begin, you can stop the server by one of two methods:
-
-$ ps auwx | grep cassandra
-$ sudo kill pid
-
-or
-
-$ sudo kill -9 $(ps aux | grep dse | awk {'print $2'})
-
-To start Cassandra:
-
-$ sudo service dse start
-
-
-Accessing DataStax Tools
-The following UI's you'll want to play around with.  You will need to determine the proper IP addresses to use. Locate these as follows:
-
- - OpsCenter: 
--	http://<opscenter ip address>:8888
--	IP address found as the public IP address for the opscenter vm
- - Spark Master: 
--	http://<spark master ip address>:7080
--	IP address found by ssh to any of the dc0vmX nodes, and running the following command (more on dsetool, and what it is later):
-
-$ dsetool status
-
-Note: Ownership information does not include topology, please specify a keyspace.
-Address          DC           Rack         Workload                       Status  State      Load                Owns                  VNodes
-123.456.1.1    dc0           FD1          SearchAnalytics(JT)      Up        Normal   219.98 KB       34.69%               64
-123.456.1.2    dc0           FD2          SearchAnalytics            Up        Normal   12.22 MB         31.12%               64
-123.456.1.3    dc0           FD0          SearchAnalytics            Up        Normal   12.36 MB         34.18%               64
-
--	Look for the (JT) specification under the Workload column. This is the node with the Spark Job Tracker. Use the Public IP address in the command above.
- - Solr UI: http://<solr node ip address>:8983/solr/
--	Use the Public IP address of your dc0vm0 node. This is the node that we will default to using for all subsequent commands with regards to Solr. 
+Great!  You've now logged into the administrative tool, OpsCenter, on your cluster.  You've also used SSH to connect to each database node in your cluster and used that to turn Spark and Solr on.  Finally you've logged into the administrative interfaces for both Spark and Solr.  Next up we're going to start putting data in the database!
 
