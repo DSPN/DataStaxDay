@@ -12,7 +12,9 @@ Mouse over the nodes in your ring.  There should be three, with the names dc0vm0
 
 ![](./img/lab1-3opsdc0vm0ip.png)
 
-Make of note of that node's IP address.  In this case it is 13.88.28.80.  Your IP will be different.  We're now going to SSH into each node and modify a configuration file.  You will have to repeat these steps for nodes dc0vm0, dc0vm1 and dc0vm2.  If you are on a Mac, you already have SSH installed in your terminal.  If you are on Windows, you may need to install an SSH client.  A popular SSH client is Putty.  Putty can be downloaded from [http://www.putty.org](http://www.putty.org).
+Make of note of that node's IP address.  In this case it is 13.88.28.80.  Your IP will be different.  We're now going to SSH into each node and modify a configuration file.  You will have to repeat these steps for nodes dc0vm0, dc0vm1 and dc0vm2.  
+
+If you are on a Mac, you already have SSH installed in your terminal.  If you are on Windows, you may need to install an SSH client.  A popular SSH client is Putty.  Putty can be downloaded from [http://www.putty.org](http://www.putty.org).
 
 For this cluster, the username is datastax.  So, in the terminal I can ssh to the node by running the command:
 
@@ -57,7 +59,7 @@ The service will come back with messages saying that Spark and Solr are now runn
 
 ![](./img/lab1-7service.png)
 
-Important -- Repeat these steps to enable Spark and Solr on nodes dc0vm1 and dc0vm2.
+*Important* -- Repeat these steps to enable Spark and Solr on nodes dc0vm1 and dc0vm2.
 
 Once complete, you can check all the configs are properly set by running the following command from any node.
 
@@ -66,6 +68,8 @@ dsetool status
 ```
 
 ![](./img/lab1-8dsetoolstatus.png)
+
+Each node should say the words "Search" and "Analytics."  If any of them don't, you may have to SSH back into that node and ensure the new configuration is set.
 
 Note that one of the nodes says "(JT)"  This is your Spark job track.  You can view a webpage with information about Spark jobs by opening a web browser to port 7080 on that node.  For this cluster that is at http://13.88.29.37:7080.  Note your URL will be different.
 
