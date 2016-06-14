@@ -40,15 +40,13 @@ Now we can source the script to run it with the command:
 source 'lab3-primary-key-tables-data.cql'
 ```
 
+![](./img/lab3-4source.png)
 
+Great!  Now we have some data loaded up that we can take a look at.  Let's try running some queries.
 
+The CQL file here contains five different sets of queries [./cql/lab3-primary-key-queries.cql](./cql/lab3-primary-key-queries.cql).
 
-
-
-. Look at these queries:
-https://github.com/chudro/Cassandra-Primary-Key-Exercise/blob/master/Cassandra-Primary-Key-Queries.cql
 For one table at a time, copy/paste/run the groups of queries. In other words, run all of the queries for sentiment1 at the same time. Check out Cassandra's response. Then run all queries for sentiment2 at the same time, etc. You'll notice that some of the queries work against some of the tables, but not all. Why?
-
 
 ## Extra Credit 1
 
