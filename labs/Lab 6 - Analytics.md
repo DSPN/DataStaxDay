@@ -4,10 +4,9 @@
 
 If you're interested in dissecting a full scale streaming app, check out this git: https://github.com/retroryan/SparkAtScale
 
-Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL. We just need to run one command to bind the local IP to the Spark REPL before accessing it (a bind error will occur if this step is skipped):
+Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL::
 
 ```
-export SPARK_LOCAL_IP=`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1`
 dse spark-sql
 ```
 
