@@ -14,10 +14,6 @@ Let's give it a shot.
 
 First, we will shutdown one of the nodes so you can see the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem) in action. Go to your browser, and access OpsCenter at http://opscenter_ip_address:8888
 
-![](./img/lab4-1opsc.png)
-
-Click on the nodes icon (below the house icon).
-
 ![](./img/lab4-2ring.png)
 
 Now, select one of the nodes and click on it:
