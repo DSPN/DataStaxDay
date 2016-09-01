@@ -79,3 +79,6 @@ We also enabled Solr on our nodes.  You can actually view the Solr UI on any nod
 
 Great!  You've now logged into the administrative tool, OpsCenter, on your cluster.  You've also used SSH to connect to each database node in your cluster and used that to turn Spark and Solr on.  Finally you've logged into the administrative interfaces for both Spark and Solr.  Next up we're going to start putting data in the database!
 
+## Optional Exercise
+
+OpsCenter 6 introduced Lifecycle Manager (LCM).  Add the cluster to LCM and then review the settings.  It's possible to enable/disable Spark and Solr in LCM.
