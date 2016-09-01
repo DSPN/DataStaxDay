@@ -1,12 +1,8 @@
 # Lab 1 - Accessing the Cluster
 
-Open a web browser to your OpsCenter node.  If you are using Azure Marketplace, you can find that at [http://portal.azure.com](http://portal.azure.com) at detailed in [Lab 0](./Lab%200%20-%20Provisioning.md).  If you are using a test drive the URL is available there.  OpsCenter runs on port 8888 of the OpsCenter node in Azure.  For this cluster, it's running at http://13.88.25.34:8888.  The URL of your OpsCenter will be different.
+Open a web browser to your OpsCenter node.  If you are using Azure Marketplace, you can find that at [http://portal.azure.com](http://portal.azure.com) at detailed in [Lab 0](./Lab%200%20-%20Provisioning.md).  If you are using a test drive the URL is available there.  OpsCenter runs on port 8888 of the OpsCenter node in Azure.  For this cluster, it's running at http://104.40.53.203:8888.  The URL of your OpsCenter will be different.
 
 ![](./img/lab1-1opscenter.png)
-
-Click on the nodes icon below the house icon to see a view of the nodes in your cluster.
-
-![](./img/lab1-2ring.png)
 
 Mouse over the nodes in your ring.  There should be three, with the names dc0vm0, dc0vm1 and dc0vm2.  Click on dc0vm0.
 
