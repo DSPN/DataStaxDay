@@ -12,6 +12,8 @@ dse spark-sql
 
 ![](./img/lab6-1sparksql.png)
 
+Note that some warnings will be printed.  This is due to table setup by OpsCenter we are working to improve.  Commands should still work properly.
+
 Now we can try some SQL commands.  Note that this is SQL, not CQL.
 
 ```
