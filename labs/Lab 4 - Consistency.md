@@ -38,7 +38,7 @@ At a command prompt on a node that is still running start cqlsh by running the c
 cqlsh
 ```
 
-![](./img/lab4-7cqlsh.png)
+![](./img/lab4-7cqlsh_v502.png)
 
 Now, in the cqlsh, run the commands:
 
@@ -47,7 +47,7 @@ tracing on
 consistency all
 ```
 
-![](./img/lab4-8tracingall.png)
+![](./img/lab4-8tracingall_v502.png)
 
 Any query will now be traced. Consistency of all means all 3 replicas need to respond to a given request (read OR write) to be successful. Let's do a SELECT statement in cqlsh to see the effects.
 
@@ -64,7 +64,7 @@ SELECT * FROM retailer.sales where name='chuck';
 
 In this case, be sure to take note of the time the query took to complete.  Quorum means majority: RF/2 + 1. In our case, 3/2 = 1 + 1 = 2. At least 2 nodes need to acknowledge the request.
 
-Let's try the SELECT statement again.
+Let's try the SELECT statement again with consistency level set to local_one:
 
 ```
 consistency local_one

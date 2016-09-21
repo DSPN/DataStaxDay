@@ -10,7 +10,7 @@ Let's start off by indexing the tables we've already made. Here's where the dset
 dsetool create_core retailer.sales generateResources=true reindex=true
 ```
 
-![](./img/lab5-1makecore.png)
+![](./img/lab5-1makecore_v502.png)
 
 If you've ever created your own Solr cluster, you know you need to create the core and upload a schema and config.xml. That generateResources tag does that for you. For production use, you'll want to take the resources and edit them to your needs but it does save you a few steps.
 
@@ -22,15 +22,15 @@ This by default will map Cassandra types to Solr types for you. Anyone familiar 
 SELECT * FROM retailer.sales WHERE solr_query='{"q":"name:*"}';
 ```
 
-![](./img/lab5-2solrselect.png)
+![](./img/lab5-2solrselect_v502.png)
 
 ```
 SELECT * FROM retailer.sales WHERE solr_query='{"q":"name:chuck", "fq":"item:*icrosof*"}';
 ```
 
-![](./img/lab5-3solrselect.png)
+![](./img/lab5-3solrselect_v502.png)
 
-For your reference, here's the doc that shows some of things you can do: http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/srch/srchCql.htmlp
+For your reference, here's the doc that shows some of things you can do: http://docs.datastax.com/en/latest-dse/datastax_enterprise/srch/queriesCql.html
 
 ## Retail Book Workshop
 
@@ -48,7 +48,7 @@ git clone https://github.com/chudro/Retail-Book-Demo.git
 cd Retail-Book-Demo/
 ```
 
-![](./img/lab5-4installs.png)
+![](./img/lab5-4installs_v502.png)
 
 Great!  Now that is all installed, check what your 10.0.0.x private address is using the command:
 
@@ -56,9 +56,9 @@ Great!  Now that is all installed, check what your 10.0.0.x private address is u
 ifconfig
 ```
 
-![](./img/lab5-5tenzero.png)
+![](./img/lab5-5tenzero_v502.png)
 
-For this node the address is 10.0.0.6.  Yours may be different.  Now we're going to edit the solr_dataloader.py file.
+For this node the address is 10.0.0.5.  Yours may be different.  Now we're going to edit the solr_dataloader.py file.
 
 ```
 sudo vi solr_dataloader.py
@@ -66,7 +66,7 @@ sudo vi solr_dataloader.py
 
 Change the line cluster = Cluster(['node0','node1','node2']) to cluster = Cluster(['10.0.0.x’])
 
-![](./img/lab5-6loaderip.png)
+![](./img/lab5-6loaderip_v502.png)
 
 Now run the data loader and then create a solr core on top of the new data.
 
@@ -75,7 +75,7 @@ sudo python solr_dataloader.py
 ./create_core.sh
 ```
 
-![](./img/lab5-7coreandload.png)
+![](./img/lab5-7coreandload_v502.png)
 
 Here's an example page of what's in the database now: https://www.amazon.com/Science-Closer-Look-Grade-6/dp/0022841393?ie=UTF8&keywords=0022841393&qid=1454964627&ref_=sr_1_1&sr=8-1
 

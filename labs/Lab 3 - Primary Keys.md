@@ -14,7 +14,7 @@ First off, let's use a CQL script to create tables and populate data.  To copy t
 wget https://raw.githubusercontent.com/DSPN/DataStaxDay/master/labs/cql/lab3-primary-key-tables-data.cql
 ```
 
-![](./img/lab3-1wget.png)
+![](./img/lab3-1wget_v502.png)
 
 Take a look at the file in your favorite text editor, for instance using vi by running the command:
 
@@ -22,7 +22,7 @@ Take a look at the file in your favorite text editor, for instance using vi by r
 vi lab3-primary-key-tables-data.cql
 ```
 
-![](./img/lab3-2vi.png)
+![](./img/lab3-2vi_v502.png)
 
 You'll notice all tables are exactly the same except for the primary key definition.
 
@@ -32,7 +32,7 @@ Now let's run the cql script.  To do so, start cqlsh by running:
 cqlsh
 ```
 
-![](./img/lab3-3cqlsh.png)
+![](./img/lab3-3cqlsh_v502.png)
 
 Now we can source the script to run it with the command:
 
@@ -40,7 +40,7 @@ Now we can source the script to run it with the command:
 source 'lab3-primary-key-tables-data.cql'
 ```
 
-![](./img/lab3-4source.png)
+![](./img/lab3-4source_v502.png)
 
 Great!  Now we have some data loaded up that we can take a look at.  Let's try running some queries.
 
@@ -77,6 +77,12 @@ Know what a partition key is. Know what a clustering key is. Know how they work 
 ### Secondary Indexes
 
 If you're tempted to use a secondary index in Cassandra in production, at least in Cassandra 2.1, don't do it. Instead, create a new table with a PK definition that will meet your query needs. In Cassandra, denormalization is fast and scalable. Secondary indexes aren't as much. Why? Lots of reason that have to do with the fact that Cassandra is a distributed system. It's a good thing.
+
+### Materialized Views
+
+In Cassandra 3.0 and later, a materialized view is a table that is built from another table's data with a new primary key and new properties. In Cassandra, queries are optimized by primary key definition. Standard practice is to create the table for the query, and create a new table if a different query is needed.  A materialized view automatically receives the updates from its source table.  
+
+Secondary indexes are suited for low cardinality data. Queries of high cardinality columns on secondary indexes mentioned above require Cassandra to access all nodes in a cluster, causing high read latency.  While materialized views are suited for high cardinality data. The data in a materialized view is arranged serially based on the view's primary key. 
 
 ### Relational Data Models
 

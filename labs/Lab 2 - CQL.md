@@ -12,7 +12,7 @@ To start the cqlsh client run the command:
 cqlsh
 ```
 
-![](./img/lab2-1cqlsh.png)
+![](./img/lab2-1cqlsh_v502.png)
 
 Let's make our first Cassandra Keyspace! If you are using uppercase letters, use double quotes around the keyspace.
 
@@ -34,7 +34,7 @@ CREATE TABLE retailer.sales (
 ) WITH CLUSTERING ORDER BY ( time DESC );
 ```
 
-![](./img/lab2-2createtable.png)
+![](./img/lab2-2createtable_v502.png)
 Yup. This table is very simple but don't worry, we'll play with some more interesting tables in just a minute.
 
 Let's get some data into your table! Cut and paste these inserts into DevCenter or CQLSH. Feel free to insert your own data values, as well.
@@ -47,7 +47,7 @@ INSERT INTO retailer.sales (name, time, item, price) VALUES ('chuck', 20160207, 
 INSERT INTO retailer.sales (name, time, item, price) VALUES ('chuck', 20160208, 'Specialized Roubaix', 4599.00);
 ```
 
-![](./img/lab2-3cqlinsert.png)
+![](./img/lab2-3cqlinsert_v502.png)
 
 Now, to retrieve data from the database run:
 
@@ -55,7 +55,7 @@ Now, to retrieve data from the database run:
 SELECT * FROM retailer.sales WHERE name='chuck' AND time >=20160205; 
 ```
 
-![](./img/lab2-4select.png)
+![](./img/lab2-4select_v502.png)
 
 See what I did there? You can do range scans on clustering keys! Give it a try.
 
