@@ -10,9 +10,7 @@ Spark has a REPL we can play in. To make things easy, we'll use the SQL REPL::
 dse spark-sql
 ```
 
-![](./img/lab6-1sparksql.png)
-
-Note that some warnings will be printed.  This is due to table setup by OpsCenter we are working to improve.  Commands should still work properly.
+![](./img/lab6-1sparksql_v502.png)
 
 Now we can try some SQL commands.  Note that this is SQL, not CQL.
 
@@ -21,7 +19,7 @@ use retailer;
 SELECT sum(price) FROM metadata;
 ```
 
-![](./img/lab6-2sparkquery.png)
+![](./img/lab6-2sparkquery_v502.png)
 
 We can give a variety of more complex queries such as:
 
