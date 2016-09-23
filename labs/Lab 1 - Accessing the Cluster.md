@@ -62,20 +62,20 @@ The service will come back with messages saying that Spark and Solr are now runn
 Once complete, you can check all the configs are properly set by running the following command from any node.
 
 ```
-dsetool status
+dsetool ring
 ```
 
-![](./img/lab1-8dsetoolstatus.png)
+![](./img/lab1-8dsetoolstatus_v502.png)
 
 Each node should say the words "Search" and "Analytics."  If any of them don't, you may have to SSH back into that node and ensure the new configuration is set.
 
-Note that one of the nodes says "(JT)"  This is your Spark job track.  You can view a webpage with information about Spark jobs by opening a web browser to port 7080 on that node.  For this cluster that is at http://13.88.29.37:7080.  Note your URL will be different.
+Note that one of the nodes says "(JT)"  This is your Spark job track.  You can view a webpage with information about Spark jobs by opening a web browser to port 7080 on that node.  For this cluster that is at http://13.75.93.215:7080 .  Note your URL will be different.
 
-![](./img/lab1-9sparkjt.png)
+![](./img/lab1-9sparkjt_v502.png)
 
-We also enabled Solr on our nodes.  You can actually view the Solr UI on any node.  However, for our exercises we're going to use dc0vm0.  Open a web browser to port 8983 /solr/ on dc0vm0.  For this cluster that is at http://13.88.28.80:8983/solr.  The URL will be different for your cluster.
+We also enabled Solr on our nodes.  You can actually view the Solr UI on any node.  However, for our exercises we're going to use dc0vm0.  Open a web browser to port 8983 /solr/ on dc0vm0.  For this cluster that is at http://13.75.93.215:8983/solr .  The URL will be different for your cluster.
 
-![](./img/lab1-10solrui.png)
+![](./img/lab1-10solrui_v502.png)
 
 Great!  You've now logged into the administrative tool, OpsCenter, on your cluster.  You've also used SSH to connect to each database node in your cluster and used that to turn Spark and Solr on.  Finally you've logged into the administrative interfaces for both Spark and Solr.  Next up we're going to start putting data in the database!
 
