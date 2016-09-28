@@ -1,4 +1,4 @@
-# Lab 7 - Operations
+# Lab 8 - Operations
 
 Most of us love to have tools to monitor and automate database operations. For Cassandra, that tool is DataStax OpsCenter. If you prefer to roll with the command line, then two core utilities you'll need to understand are nodetool and dsetool.
 

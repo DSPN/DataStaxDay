@@ -44,8 +44,9 @@ We want to change two parameter to "1."  Those are:
 
 * SOLR_ENABLED=1
 * SPARK_ENABLED=1
+* GRAPH_ENABLED=1
 
-![](./img/lab1-6vi.png)
+![](./img/lab1-6vi_v502.png)
 
 We now need to save the file and exit the text editor.  At that point we'll want to restart the DSE service, so that the new parameters are picked up.  We can do that by running the command:
 
