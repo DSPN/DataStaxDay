@@ -62,7 +62,7 @@ bin/server.sh
 
 ##### Use DataStax Studio to create schema and run Gremlin queries
 
-Open your local browser at http:\/\/<public_ip of your Cassandra node>:9091 and create a connection to create your graph database as follows:
+Open your local browser at http://\<public_ip of your Cassandra node\>:9091 and create a connection to create your graph database as follows:
 
 ![](./img/lab7_datastax_front.png)
 
