@@ -50,8 +50,8 @@ tar -xzvf datastax-studio-1.0.1.tar.gz
 ```
 
 Edit the configuration.yaml file to update the httpBindAddress to your VM instance's private 10.x.x.x address
-![](./img/lab7_datastax_studio_configuration_yaml.png)
 
+![](./img/lab7_datastax_studio_configuration_yaml.png)
 Then start your DataStax Studio
 
 ```
