@@ -49,7 +49,7 @@ wget https://s3-us-west-2.amazonaws.com/datastax-day/datastax-studio-1.0.1.tar.g
 tar -xzvf datastax-studio-1.0.1.tar.gz
 ```
 
-Edit the configuration.yaml file to update the httpBindAddress to your VM instance's private 10.x.x.x address
+Edit the configuration.yaml file in your <DataStax Studio Install Directory>/conf to update the httpBindAddress to your VM instance's private 10.x.x.x address
 
 ![](./img/lab7_datastax_studio_configuration_yaml.png)
 <br>
