@@ -9,6 +9,7 @@ In this lab, we are going to get you some hands on experience with DSE Graph. It
 #### Prerequisites:
 
 DataStax Graph Loader
+
 DataStax Enterprise 5.0.2
 DataStax Studio 1.0.1
 Download the data for our graph
