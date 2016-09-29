@@ -130,14 +130,14 @@ This process will take approximately ten minutes.
 
 ##### Now, we are ready to run some queries.
 
-Let's run a very broad query to return all vertices.  Remember that Studio truncates results to 1000 by default.
+Let's run a very broad query to return all vertices.  Remember that Studio truncates results to 1000 by default.  This query will take around 6 or 7 minutes long as it has to traverse the entire graph.
 ```
 g.V()
 ```
 
 ![](./img/lab7_gV.png)
 
-Now, let's run a more refined query to retrieve reviews of all product items.
+Now, let's run a more refined query to retrieve reviews of all product items.  This query will take around 6 or 7 minutes long as it has to traverse the entire graph.
 
 ```
 g.V().outE('reviewed')
