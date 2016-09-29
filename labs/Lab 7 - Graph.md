@@ -95,7 +95,6 @@ Click the real-time play button to execute. When it finishes, hit the schema but
 ##### Download the required data files and load them into your graph database
 ```
 cd ~/DSE_Graph
-cd <datastax loader install directory>
 wget https://s3-us-west-2.amazonaws.com/datastax-day/meta.json.gz
 wget https://s3-us-west-2.amazonaws.com/datastax-day/qa.json.gz
 wget https://s3-us-west-2.amazonaws.com/datastax-day/reviews.json.gz
