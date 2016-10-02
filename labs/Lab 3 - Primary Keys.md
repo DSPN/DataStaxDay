@@ -50,7 +50,7 @@ For one table at a time, copy/paste/run the groups of queries. In other words, r
 
 ## Extra Credit 1
 
-Did this query work for any of the tables?  Why or why not?
+Did this query work for any of the tables?  Why or why not?  (sentimentX below = sentiment1, sentiment2, ... or sentiment5 in lab3-primary-key-queries.cql)
 
 ```
 select * from sentimentX where ch = 'facebook' and dt >= 20160102 and dt <= 20160103;
