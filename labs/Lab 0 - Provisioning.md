@@ -36,7 +36,7 @@ When complete click "ok."
 
 ![](./img/lab0-6datastaxsettings_v502.png)
 
-We're going to deploy a smaller cluster than the default.  Select 3 nodes and ensure that "Standard D3 v2" is selected as the machine size.  Note that if you are using a free trial you will need to use a "Standard D1 v2" instead.  If you are not using the free trial, we strongly recommend the Standard D3 v2 as that will have more resources available for the exercises.
+We're going to deploy a smaller cluster than the default.  Select 3 nodes and ensure that "Standard D2 v2" is selected as the machine size.  Note that if you are using a free trial you will need to use a "Standard D1 v2" instead.  If you are not using the free trial, we strongly recommend the Standard D2 v2 as that will have more resources available for the exercises.
 
 Ensure that you have the correct selections as show below.
 
