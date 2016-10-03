@@ -47,10 +47,10 @@ It may be useful to consult the [Azure Deployment Guide](https://github.com/DSPN
 
 Bestmart is comtemplating a significant investment to refresh its infrastructure.  What questions do we need to answer to help them get a handle on:
 * Business as Usual
-    * Maitenance cost
+    * Maintenance cost
     * Opportunity cost
 * DataStax and Azure
-    * Maitenance cost
+    * Maintenance cost
     * Migration cost
     * Benefit
 
