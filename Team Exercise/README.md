@@ -4,9 +4,9 @@ For this exercise you should work as teams of 3-5 people.
 
 ## Background
 
-Bestmart is a global retailer that was founded in Missouri in 1900.  Since then, they've grown to over 8000 locations globally through organic growth as well as acquisition of brands in Western Europe and Asia.  Bestmart revenue is currently over $30B.
+Bestmart is a global retailer that was founded in St. Louis in 1900.  Since then, they've grown to over 8000 locations globally through organic growth as well as acquisition of brands in Western Europe and Southeast Asia.  Bestmart revenue is currently over $30B.
 
-Bestmart is looking to refresh the databae infrastructure in their Ashburn, VA datacenter which is hosted by AT&T.  They've heard about DataStax and believe they can improve on the availability of their current infrastructure while reducing the TCO.
+Bestmart is looking to refresh the database infrastructure in their Ashburn, VA datacenter which is hosted by AT&T.  They've heard about DataStax and believe they can improve on the availability of their current infrastructure while reducing the TCO.
 
 The Ashburn datacenter has a 10 node Oracle Exadata X5-2 system.  A DR site in Reston hosts 15 Dell PowerEdge servers that are nearly five years old and running Oracle 10g.  Oracle GoldenGate and Oracle Data Guard are used to copy data to the DR site.  The SLA for data copy is 30 minutes.  In the event DR is invoked, the DR site must be live within 8 hours to meet its SLA.
 
@@ -45,12 +45,16 @@ It may be useful to consult the [Azure Deployment Guide](https://github.com/DSPN
 
 ### ROI
 
-Bestmart is comtemplated a significant investment to refresh its infrastructure.  What questions do we need to answer to help them get a handle on:
+Bestmart is comtemplating a significant investment to refresh its infrastructure.  What questions do we need to answer to help them get a handle on:
 * Business as Usual
-* Migration Cost
-* Cost of DataStax and Azure
+    * Maitenance cost
+    * Opportunity cost
+* DataStax and Azure
+    * Maitenance cost
+    * Migration cost
+    * Benefit
 
-For this exercise, build out a rough ROI and check if the proposed infrastructure will benefit Bestmart.
+For this exercise, build out an ROI and check if the proposed infrastructure will benefit Bestmart.
 
 ## Presenting
 
