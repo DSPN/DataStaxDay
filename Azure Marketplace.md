@@ -20,6 +20,8 @@ Here's our agenda for today:
 * Analytics
     * Lecture - Analytics
     * [Lab 6 - Analytics](./labs/Lab%206%20-%20Analytics.md)
+* Graph
+    * Lecture - Graph
     * [Lab 7 - Graph](./labs/Lab%207%20-%20Graph.md)
     * [Lab 8 - Operations](./labs/Lab%208%20-%20Operations.md)
 * Lecture - Next Steps (and the Raffle!)
