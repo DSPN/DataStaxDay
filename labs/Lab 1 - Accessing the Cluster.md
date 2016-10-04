@@ -42,9 +42,9 @@ In vi you can type "i" to enter insert mode.  When done editing, pressing the es
 
 We want to change two parameter to "1."  Those are:
 
+* GRAPH_ENABLED=1
 * SOLR_ENABLED=1
 * SPARK_ENABLED=1
-* GRAPH_ENABLED=1
 
 ![](./img/lab1-6vi_v502.png)
 
