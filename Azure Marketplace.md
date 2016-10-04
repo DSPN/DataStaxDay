@@ -23,6 +23,8 @@ Here's our agenda for today:
 * Graph
     * Lecture - Graph
     * [Lab 7 - Graph](./labs/Lab%207%20-%20Graph.md)
+* Operations
+    * Lecture - Operations
     * [Lab 8 - Operations](./labs/Lab%208%20-%20Operations.md)
 * Lecture - Next Steps (and the Raffle!)
 
