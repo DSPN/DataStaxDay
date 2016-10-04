@@ -54,7 +54,7 @@ We now need to save the file and exit the text editor.  At that point we'll want
 service dse restart
 ```
 
-The service will come back with messages saying that Spark and Solr are now running as shown below.
+The service will come back with messages saying that Graph, Spark and Solr are now running as shown below.
 
 ![](./img/lab1-7service.png)
 
