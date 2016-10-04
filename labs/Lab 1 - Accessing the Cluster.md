@@ -54,9 +54,9 @@ We now need to save the file and exit the text editor.  At that point we'll want
 service dse restart
 ```
 
-The service will come back with messages saying that Graph, Spark and Solr are now running as shown below.
+The service will come back with messages saying that Solr, Spark and Graph are now running as shown below.
 
-![](./img/lab1-7service.png)
+![](./img/lab1-7service_v502.png)
 
 *Important* -- Repeat these steps to enable Spark and Solr on nodes dc0vm1 and dc0vm2.
 
@@ -68,7 +68,7 @@ dsetool ring
 
 ![](./img/lab1-8dsetoolstatus_v502.png)
 
-Each node should say the words "Search" and "Analytics."  If any of them don't, you may have to SSH back into that node and ensure the new configuration is set.
+Each node should say the words "Search" and "Analytics" and the Graph's column has the value "yes". If any of them don't, you may have to SSH back into that node and ensure the new configuration is set.
 
 Note that one of the nodes says "(JT)"  This is your Spark job track.  You can view a webpage with information about Spark jobs by opening a web browser to port 7080 on that node.  For this cluster that is at http://13.75.93.215:7080 .  Note your URL will be different.
 
