@@ -26,5 +26,4 @@ Here's our agenda for today:
 * Operations
     * Lecture - Operations
     * [Lab 8 - Operations](./labs/Lab%208%20-%20Operations.md)
-* Lecture - Next Steps (and the Raffle!)
-
+* Lecture - Next Steps
