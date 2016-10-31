@@ -45,6 +45,7 @@ sudo apt-get -y install libev4 libev-dev
 sudo pip install cassandra-driver
 sudo apt-get -y install git
 git clone https://github.com/chudro/Retail-Book-Demo.git
+git clone -b patch-1 https://github.com/gmflau/Retail-Book-Demo
 cd Retail-Book-Demo/
 ```
 
