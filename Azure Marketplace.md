@@ -1,6 +1,6 @@
 # Azure Marketplace
 
-First off, we need to provision a cluster.  Please provision the cluster prior to the event.  You can work with your Cloud Solution Architect (CSA) or Data Solution Architect (DSA) if you encounter any issues or questons.  Instructions for provisioning are here:
+First off, we need to provision a cluster.  Please provision the cluster prior to the event.  You can work with your Cloud Solution Architect (CSA) or Data Solution Architect (DSA) if you encounter any issues or questions.  Instructions for provisioning are here:
 
 * [Lab 0 - Provisioning](./labs/Lab%200%20-%20Provisioning.md)
 
@@ -26,4 +26,4 @@ Here's our agenda for today:
 * Operations
     * Lecture - Operations
     * [Lab 8 - Operations](./labs/Lab%208%20-%20Operations.md)
-* Lecture - Next Steps
+* [Team Exercise](./Team%20Exercise)
